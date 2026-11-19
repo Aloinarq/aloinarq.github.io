@@ -64,7 +64,7 @@ function openFromHash() {
   if (el instanceof HTMLDetailsElement && el.classList.contains('bar')) {
     document.querySelectorAll<HTMLDetailsElement>('details.bar').forEach((b) => { b.open = b === el; b.classList.toggle('is-target', b === el); });
     el.closest('li')?.classList.add('in');
-    requestAnimationFrame(() => el.scrollIntoView({ block: 'start', behavior: reduced ? 'auto' : 'smooth' }));
+    requestAnimationFrame(() => el.scrollIntoView({ block: el.offsetHeight < innerHeight * 0.7 ? 'center' : 'start', behavior: reduced ? 'auto' : 'smooth' }));
   }
 }
 addEventListener('hashchange', openFromHash);

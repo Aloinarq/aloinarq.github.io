@@ -17,6 +17,7 @@ const ids = d.ids as Record<string, string>;
             <div class="body">
               <div class="before"><p><strong>{d.who.today}:</strong> {g.today}</p></div>
               <div class="after"><p><strong>{d.who.withScan}:</strong> {g.after}</p></div>
+              <a class="bar-cta" href={`#${d.ids.contact}`}>{d.nav.cta}</a>
             </div>
           </details>
         </li>

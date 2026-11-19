@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config';
+import { languages, pathFor, t } from '../i18n';
+---
+<Base lang="ro" page="home" title={`404 – ${site.nameInText}`} description={t('ro').notFound.text} noindex>
+  <header class="bar-top"><a class="mark" href="/ro/" translate="no">{site.name}</a></header>
+  <main id="main" class="doc">
+    <div class="doc-col">
+      {languages.map((lang) => (
+        <section lang={lang}>
+          <h1>{t(lang).notFound.title}</h1>
+          <p class="intro">{t(lang).notFound.text}</p>
+          <a class="back" href={pathFor(lang, 'home')}>{t(lang).notFound.home}</a>
+        </section>
+      ))}
+    </div>
+  </main>
+</Base>

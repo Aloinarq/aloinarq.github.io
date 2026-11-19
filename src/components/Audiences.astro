@@ -1,0 +1,26 @@
+---
+import { t, type Lang } from '../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const ids = d.ids as Record<string, string>;
+---
+<section class="section who" id={d.ids.who} aria-labelledby="who-heading">
+  <div class="who-col">
+    <h2 id="who-heading" class="sr-only">{d.who.heading}</h2>
+    <p class="giant rise" aria-hidden="true">{d.who.word}</p>
+    <ul class="bars">
+      {d.who.groups.map((g, i) => (
+        <li class="rise" style={`--i:${i + 1}`}>
+          <details class="bar" id={ids[g.key]} open={i === 0}>
+            <summary><span>{g.name}</span><span class="plus" aria-hidden="true"></span></summary>
+            <div class="body">
+              <div class="before"><h4>{d.who.today}</h4><p>{g.today}</p></div>
+              <div class="after"><h4>{d.who.withScan}</h4><p>{g.after}</p></div>
+            </div>
+          </details>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

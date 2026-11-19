@@ -1,0 +1,18 @@
+---
+import { t, type Lang } from '../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+---
+<section class="section about" id={d.ids.about} aria-labelledby="about-heading">
+  <article class="letter">
+    <h2 id="about-heading" class="sr-only">{d.about.heading}</h2>
+    <!-- [TODO: photo] replace this circle with a 88 × 88 px portrait of Levente -->
+    <div class="portrait rise" role="img" aria-label={d.about.photoTodo}><span aria-hidden="true">TODO</span></div>
+    <div class="letter-body">
+      {d.about.paragraphs.map((p, i) => <p class="rise" style={`--i:${i + 1}`}>{p}</p>)}
+    </div>
+    <p class="signoff rise">{d.about.signoff}</p>
+    <p class="role">{d.about.role}</p>
+  </article>
+</section>

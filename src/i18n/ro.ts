@@ -1,0 +1,286 @@
+import { prices, service, site } from '../config';
+import type { Dict } from './en';
+
+const lei = (n: number) => `${n.toLocaleString('ro-RO')} lei`;
+const example = prices.apartmentExampleArea * prices.apartmentPerSquareMetre;
+
+export const ro: Dict = {
+  lang: 'ro',
+  htmlLang: 'ro',
+  ogLocale: 'ro_RO',
+  languageName: 'Română',
+  skip: 'Sari la conținut',
+  meta: {
+    title: 'Plan 1:1 – scanări de camere, planuri măsurate și modele 3D',
+    description:
+      'Scanez camere cu senzorul LiDAR al unui iPhone și livrez un plan măsurat și un model 3D care se deschide în browser. Pentru designeri, tâmplari, constructori și agenți imobiliari din România.',
+    ogAlt: 'Modelul 3D al unui dormitor scanat, văzut de sus, lângă numele plan 1:1.',
+  },
+  slugs: { privacy: 'confidentialitate', terms: 'termeni-formular' },
+  ids: {
+    what: 'ce-primiti',
+    fit: 'incape',
+    who: 'pentru-cine',
+    how: 'cum-lucrez',
+    prices: 'preturi',
+    about: 'despre',
+    faq: 'intrebari',
+    contact: 'cerere',
+    designers: 'designeri',
+    makers: 'bucatarii',
+    contractors: 'renovari',
+    agents: 'imobiliare',
+    homeowners: 'proprietari',
+  },
+  nav: {
+    label: 'Principal',
+    menu: 'Meniu',
+    close: 'Închide',
+    what: 'Ce primiți',
+    who: 'Pentru cine',
+    prices: 'Prețuri',
+    faq: 'Întrebări',
+    cta: 'Cereți o ofertă',
+    languages: 'Limba',
+  },
+  hero: {
+    lead: 'Camere scanate cu LiDAR și livrate ca plan măsurat și model 3D, pentru designeri, tâmplari, constructori și agenți imobiliari.',
+    videoLabel: 'Modelul 3D al dormitorului meu, scanat pe 29 octombrie, rotindu-se încet.',
+    posterAlt: 'Modelul 3D al unui dormitor văzut de sus, ca o casă de păpuși: patul, dulapul, comoda și noptierele.',
+  },
+  what: {
+    heading: 'Ce primiți',
+    tabsLabel: 'Ce primiți',
+    items: [
+      {
+        tab: 'Model',
+        title: 'Camera în 3D',
+        text: 'Fiecare cameră este reconstruită ca model 3D, care se deschide în browser, pe telefon sau pe calculator, fără nimic de instalat. O vedeți ca pe o casă de păpuși, de sus, din față sau din lateral, ori vă plimbați prin ea la înălțimea ochilor.',
+        alt: 'Modelul 3D la înălțimea ochilor: patul cu tăblie capitonată, o noptieră și dulapul.',
+      },
+      {
+        tab: 'Plan',
+        title: 'Plan cu m²',
+        text: 'Un plan văzut de sus, cu pereți, uși, ferestre și mobilier numerotat, dimensiunile totale și suprafața în m², plus o legendă cu dimensiunile fiecărei piese. Planul se vede pe ecran; deocamdată nu există export PDF sau CAD.',
+        alt: 'Planul dormitorului: 4,11 × 3,60 m, aproximativ 14,8 m², cu mobilierul numerotat și o legendă cu dimensiuni.',
+      },
+      {
+        tab: 'Măsurare',
+        title: 'Ruleta din model',
+        text: 'Dați clic pe două puncte și citiți distanța, sau blocați măsurarea pe o singură direcție. Selectați o piesă și vedeți cât spațiu rămâne până la pereți și la mobilierul din jur.',
+        alt: 'Ruleta din model: 83,8 cm între capătul patului și comodă.',
+      },
+      {
+        tab: 'Amenajare',
+        title: 'Încercați la mărime reală',
+        text: 'Adăugați mobilier din catalog la dimensiuni reale (canapea, birou, bibliotecă, covoare, lămpi, televizoare și altele, sau o dimensiune la alegere) ori un produs anume, modelat după dimensiunile publicate de producător. Piesele stau pe podea sau pe perete și se opresc în pereți. Mobilierul scanat poate fi mutat, rotit sau scos, iar ușile se deschid și se închid. Fiecare variantă se salvează cu nume, cu anulare, ca să le puteți compara.',
+        alt: 'Un Samsung QN85F de 55 de inchi pus pe comodă, selectat, cu dimensiunile și distanțele până la pereți.',
+      },
+    ],
+    primary: 'Cereți o ofertă',
+    secondary: 'Vedeți prețurile',
+  },
+  fit: {
+    heading: 'Încape pe comodă?',
+    intro: 'Acesta este peretele cu comoda din dormitorul meu, desenat la scară după scanare. Alegeți un televizor și mutați-l de-a lungul comodei.',
+    sizesLabel: 'Diagonala televizorului',
+    sizes: ['43 inchi', '55 inchi Samsung QN85F', '65 inchi', '75 inchi'],
+    sizeNotes: ['dimensiune tipică', 'dimensiuni publicate', 'dimensiune tipică', 'dimensiune tipică'],
+    slider: 'Poziția pe comodă',
+    drawingLabel: 'Vedere din față a peretelui cu comoda: măsuța de toaletă cu oglinda în stânga, comoda la mijloc și ușa în dreapta.',
+    labels: { vanity: 'măsuță', mirror: 'oglindă', dresser: 'comodă', door: 'ușă' },
+    status: {
+      fits: 'Încape.',
+      tight: 'Încape, dar rămân doar {gap} cm până la {near}.',
+      hits: 'Aici nu încape: intră în {into}.',
+    },
+    things: { mirror: { near: 'oglindă', into: 'oglindă' }, door: { near: 'tocul ușii', into: 'tocul ușii' } },
+    detail:
+      'Ecran de {w} × {h} cm pe o comodă de {dresser} cm. Până la oglindă: {mirror} cm. Până la tocul ușii: {door} cm.',
+    overhang: 'Ecranul e mai lat decât comoda și iese în afară cu {left} cm în stânga și {right} cm în dreapta; piciorul rămâne pe comodă.',
+    noOverhang: 'Ecranul se încadrează în lățimea comodei.',
+    fallback: 'Centrat pe comoda de 112 cm, Samsung QN85F de 55 de inchi (122,8 cm lățime) iese în afară cu circa 5 cm pe fiecare parte și trece pe lângă oglinda măsuței la aproximativ un centimetru.',
+    note: 'O vedere simplificată din față a modelului 3D. Când distanța e sub 5 cm, verificați-o cu ruleta înainte să cumpărați.',
+    compareHeading: 'Aceeași întrebare în modelul 3D, privind din pat',
+    compare: [
+      { caption: 'Pe comodă.', alt: 'Din pat: televizorul pe comodă, măsuța și scaunul roz în stânga, ușa în dreapta.' },
+      { caption: 'Pe perete, salvat ca a doua variantă.', alt: 'Din pat: același televizor montat pe perete, deasupra comodei.' },
+    ],
+  },
+  who: {
+    word: 'Pentru',
+    heading: 'Pentru cine',
+    today: 'Acum',
+    withScan: 'Cu o scanare',
+    groups: [
+      {
+        key: 'designers',
+        name: 'Designeri de interior și arhitecți',
+        today: 'Prima vizită se duce pe ruletă și carnețel, iar releveul se redesenează înainte să înceapă proiectul.',
+        after: 'Aveți modelul 3D și planul cu m² înainte de prima întâlnire și încercați amenajările în 3D, de față cu clientul.',
+      },
+      {
+        key: 'makers',
+        name: 'Producători de bucătării, dulapuri și mobilă',
+        today: 'Încă un drum ca să verificați o cotă, și un client care nu-și poate imagina cum va sta piesa în cameră.',
+        after: 'Proiectați pornind de la dimensiunile și modelul camerei, îi arătați clientului piesa la locul ei și verificați cotele critice la fața locului înainte de producție.',
+      },
+      {
+        key: 'contractors',
+        name: 'Firme de renovări',
+        today: 'Oferte făcute din poze și dintr-o tură rapidă, apoi lungimile reale ale pereților ies la iveală după ce a început lucrarea.',
+        after: 'O evidență măsurată a spațiului înainte de lucrări: pereți, goluri și suprafață pentru ofertă, plus camera așa cum era.',
+      },
+      {
+        key: 'agents',
+        name: 'Agenți imobiliari și administratori de proprietăți',
+        today: 'Anunțuri cu o schiță de mână sau fără plan, și cumpărători care întreabă dacă le încape mobila.',
+        after: 'Un plan cu m² pentru anunț și un model 3D pe care cumpărătorii îl deschid dintr-un link.',
+      },
+      {
+        key: 'homeowners',
+        name: 'Proprietari și chiriași',
+        today: 'O canapea, un dulap sau un televizor cumpărat după dimensiunile din magazin, cu speranța că va încăpea.',
+        after: 'Verificați întâi în modelul 3D al propriei camere, la mărime reală.',
+      },
+    ],
+  },
+  how: {
+    heading: 'Patru pași, o vizită',
+    steps: [
+      { lead: 'Mai întâi, îmi trimiteți o cerere.', text: `Spuneți-mi ce camere sunt, în ce localitate și ce vreți să decideți. În ${service.replyWorkingDays} zile lucrătoare vă răspund cu un preț și o dată posibilă.` },
+      { lead: 'Apoi, un contract scris.', text: 'Primiți un contract scris înainte de orice lucrare; plata se face prin transfer bancar, pe baza acelui contract. În el apar camerele, ce primiți, prețul și termenul de livrare.' },
+      { lead: 'În ziua stabilită, vizita de scanare.', text: `Trec prin fiecare cameră cu un iPhone Pro. Senzorul LiDAR și RoomPlan de la Apple surprind pereții, ușile, ferestrele și mobilierul principal, iar eu fac și fotografii de referință. Socotiți cam ${service.minutesPerRoomOnSite} minute pe cameră.` },
+      { lead: `În ${service.deliveryWorkingDays} zile lucrătoare, livrarea și planificarea împreună.`, text: 'Primiți un link privat către model și plan. Îl deschidem împreună, punem în el ce luați în calcul și salvăm fiecare variantă cu nume.' },
+    ],
+    contractLabel: 'Primele rânduri ale modelului de contract, versiunea care se semnează.',
+    viewsLabel: 'Ce surprinde scanarea: camera văzută de sus, din față și din lateral.',
+    viewAlts: ['Modelul dormitorului văzut de sus.', 'Modelul dormitorului văzut din față.', 'Modelul dormitorului văzut din lateral.'],
+    videoLabel: 'Un Samsung QN85F de 55 de inchi luat din catalog și pus pe comodă, apoi montat pe perete.',
+  },
+  prices: {
+    heading: 'Prețuri de lansare',
+    intro: 'Un serviciu nou, făcut de un singur om, cu prețuri sub cele ale tururilor 3D și ale releveelor consacrate.',
+    groups: [
+      {
+        name: 'Scanări',
+        items: [
+          { name: 'O cameră', price: `de la ${lei(prices.oneRoom)}`, text: `Vizita de scanare, modelul 3D și planul camerei, online timp de ${service.linkOnlineMonths} luni.` },
+          { name: 'Apartament întreg', price: `de la ${prices.apartmentPerSquareMetre} lei/m²`, text: `Toate camerele, minimum ${lei(prices.apartmentMinimum)}. Pentru ${prices.apartmentExampleArea} m²: ${lei(example)}.` },
+        ],
+      },
+      {
+        name: 'În plus',
+        items: [
+          { name: 'Ajutor la amenajare', price: `de la ${lei(prices.planningPerRoom)} pe cameră`, text: `Pun în model până la ${prices.planningPiecesPerRoom} piese alese de dumneavoastră, produsele anume modelate după dimensiunile publicate.` },
+          { name: 'Deplasare', price: `inclusă în ${site.city}`, text: `În afara localității ${site.city}, cu preț stabilit înainte de semnare.` },
+        ],
+      },
+      {
+        name: 'Pentru firme',
+        items: [
+          { name: 'Prima cameră', price: prices.businessFirstRoom === 0 ? 'gratuit' : lei(prices.businessFirstRoom), text: 'O cameră din următorul proiect, ca să judecați modelul pe o lucrare reală. Una pentru fiecare firmă.' },
+        ],
+      },
+    ],
+    note: 'Sunt prețuri de pornire. Prețul final apare în contract, înainte de orice lucrare.',
+    photoAlt: 'Modelul 3D deschis pe telefon, cu televizorul pe comodă.',
+    photoCaption: 'Modelul pe telefon, fără aplicație.',
+  },
+  about: {
+    heading: 'Despre mine',
+    photoTodo: site.photo,
+    paragraphs: [
+      'Sunt Levente. Scanez camere cu senzorul LiDAR al unui iPhone Pro și reconstruiesc fiecare cameră ca plan măsurat și model 3D, pe care îl deschideți în browser.',
+      'Toate imaginile de pe această pagină arată dormitorul meu, scanat pe 29 octombrie și reconstruit în același vizualizator pe care l-ați primi și dumneavoastră.',
+      'Lucrez singur, în nume propriu, nu ca firmă. Înainte de orice lucrare semnăm un contract scris, iar plata se face prin transfer bancar, pe baza lui.',
+      'Scanarea are limite și prefer să le aflați de la mine. Deocamdată nu există export PDF sau CAD, iar scanarea vede doar ce se vede când parcurg camera: la mine, un balcon din spatele draperiilor trase a ieșit ca o simplă fereastră. De aceea, înainte de scanare deschid tot ce trebuie să se vadă.',
+      'Lucrez în română, maghiară și engleză, oriunde în România, cu vizite stabilite de comun acord.',
+    ],
+    signoff: 'Levente',
+    role: 'Scanări de camere și modele 3D',
+  },
+  faq: {
+    heading: 'Întrebări înainte de programare',
+    items: [
+      {
+        q: 'Cât de precis este?',
+        a: 'Camera e măsurată cu senzorul LiDAR al iPhone-ului și cu RoomPlan de la Apple, ceea ce se potrivește pentru planificarea mobilierului și a amenajării. Nu dau o cifră de precizie. Pentru ce se face la milimetru, cum ar fi un blat sau un corp încastrat, verificați cotele critice la fața locului, cum ați face oricum.',
+      },
+      {
+        q: 'Cât durează o scanare?',
+        a: `Cam ${service.minutesPerRoomOnSite} minute pe cameră, la fața locului, deci un apartament cu trei camere e gata în mult mai puțin de o oră. Modelul și planul urmează în ${service.deliveryWorkingDays} zile lucrătoare.`,
+      },
+      {
+        q: 'Ce trebuie să fac eu?',
+        a: 'Să-mi deschideți și să deschideți ce trebuie să se vadă: draperii, uși, dulapuri, dacă interiorul lor contează. Nu trebuie să mutați mobila; devine parte din model, iar acolo poate fi mutată sau scoasă.',
+      },
+      {
+        q: 'Ce primesc și cum îl deschid?',
+        a: `Un link privat care deschide modelul 3D și planul în orice browser actual, pe telefon sau pe calculator, fără aplicație și fără cont. Rămâne online ${service.linkOnlineMonths} luni. Butoanele vizualizatorului sunt deocamdată în engleză, așa că le parcurgem împreună la predare.`,
+      },
+      {
+        q: 'Pot scana singur camerele?',
+        a: 'Nu. Aplicația de scanare nu este publică, așa că vin eu și fac scanarea.',
+      },
+      {
+        q: 'Cum funcționează contractul și plata?',
+        a: 'Primiți un contract scris înainte de orice lucrare; plata se face prin transfer bancar, pe baza acelui contract. În el apar camerele, ce primiți, prețul și termenul de livrare, și îl semnăm amândoi.',
+      },
+      {
+        q: 'Ce se întâmplă cu scanarea mea?',
+        a: 'Este a dumneavoastră. O păstrez privat, o folosesc doar pentru proiectul dumneavoastră, nu o public niciodată și o șterg când îmi cereți. Detaliile sunt în politica de confidențialitate.',
+      },
+      {
+        q: 'Ce nu este inclus?',
+        a: 'Spații exterioare și clădiri întregi, randări fotorealiste, desene CAD, DWG sau PDF, o aplicație de descărcat și designul interior. Planul și modelul arată camerele așa cum sunt, ca să puteți planifica în ele.',
+      },
+    ],
+    privacyLink: 'politica de confidențialitate',
+  },
+  contact: {
+    heading: 'Spuneți-mi despre cameră',
+    sentence: `Vă răspund în ${service.replyWorkingDays} zile lucrătoare cu un preț și o dată. Nimic nu e rezervat până nu semnăm amândoi contractul.`,
+    fields: {
+      name: 'Numele dumneavoastră',
+      contact: 'E-mail sau telefon',
+      property: 'Tipul proprietății',
+      propertyOptions: ['Apartament', 'Casă', 'Birou', 'Magazin sau showroom', 'Altceva'],
+      rooms: 'Număr de camere',
+      roomsOptions: ['1', '2', '3', '4', '5', '6 sau mai multe'],
+      city: 'Localitatea',
+      message: 'Ce vreți să decideți?',
+      messagePlaceholder: 'De exemplu: încape o canapea de colț de 240 cm și unde punem televizorul?',
+      consent: 'Sunt de acord ca datele mele să fie folosite pentru a răspunde acestei cereri, conform {privacy} și {terms}.',
+      consentPrivacy: 'politicii de confidențialitate',
+      consentTerms: 'termenilor formularului',
+    },
+    submit: 'Trimiteți cererea',
+    sending: 'Se trimite…',
+    sent: 'Mulțumesc. Cererea a fost trimisă; vă răspund în două zile lucrătoare.',
+    error: 'Cererea nu a putut fi trimisă. Vă rog să-mi scrieți la {email}.',
+    notConnected: 'Formularul nu este încă conectat ({endpoint}). Scrieți-mi la {email} sau sunați la {phone}.',
+    or: 'Sau scrieți-mi direct:',
+    required: 'Obligatoriu',
+  },
+  footer: {
+    reach: 'Scrieți-mi sau sunați',
+    area: `${site.city}, România. Vizite stabilite de comun acord.`,
+    sections: 'Pe această pagină',
+    legal: 'Informații legale',
+    privacy: 'Politica de confidențialitate',
+    terms: 'Termenii formularului',
+    languages: 'Limbi',
+    line: 'Plan 1:1 este serviciul propriu al lui Levente, oferit ca persoană fizică în România.',
+    top: 'Înapoi sus',
+  },
+  legal: {
+    back: 'Înapoi la pagina principală',
+    updated: 'Ultima actualizare: 19 noiembrie 2026',
+  },
+  notFound: {
+    title: 'Pagina nu există',
+    text: 'Linkul poate fi vechi sau greșit.',
+    home: 'Mergeți la pagina principală',
+  },
+};

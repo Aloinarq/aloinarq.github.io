@@ -1,0 +1,36 @@
+---
+import { Picture } from 'astro:assets';
+import phone from '../assets/shots/phone.jpg';
+import { t, type Lang } from '../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+---
+<section class="section prices" id={d.ids.prices} aria-labelledby="prices-heading">
+  <div class="grid">
+    <div class="prices-head">
+      <h2 id="prices-heading" class="rise">{d.prices.heading}</h2>
+      <p class="intro rise" style="--i:1">{d.prices.intro}</p>
+      <figure class="rise" style="--i:2">
+        <Picture src={phone} formats={['avif', 'webp']} widths={[300, 450, 600]} sizes="(max-width: 899px) 60vw, 22vw" alt={d.prices.photoAlt} loading="lazy" />
+        <figcaption>{d.prices.photoCaption}</figcaption>
+      </figure>
+    </div>
+    <div class="menu-list">
+      {d.prices.groups.map((g, gi) => (
+        <div class="group rise" style={`--i:${gi + 1}`}>
+          <h3>{g.name}</h3>
+          <ul class="items">
+            {g.items.map((it) => (
+              <li>
+                <div class="item-row"><span>{it.name}</span><span class="price">{it.price}</span></div>
+                <p>{it.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <p class="note rise">{d.prices.note}</p>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+---
+import { getImage } from 'astro:assets';
+import heroShot from '../assets/shots/hero.jpg';
+import LangLinks from './LangLinks.astro';
+import { site } from '../config';
+import { t, type Lang } from '../i18n';
+interface Props { lang: Lang; poster: string }
+const { lang, poster } = Astro.props;
+const d = t(lang);
+const id = d.ids;
+const links = [
+  { href: `#${id.what}`, label: d.nav.what },
+  { href: `#${id.who}`, label: d.nav.who },
+  { href: `#${id.prices}`, label: d.nav.prices },
+  { href: `#${id.faq}`, label: d.nav.faq },
+];
+const fallback = await getImage({ src: heroShot, width: 900, format: 'jpg', quality: 80 });
+---
+<header class="hero" id="top">
+  <figure class="hero-media">
+    <video
+      data-lazy-video
+      data-src="/media/hero-orbit.mp4"
+      poster={poster}
+      muted
+      loop
+      playsinline
+      preload="none"
+      width="900"
+      height="1200"
+      aria-label={d.hero.videoLabel}
+    >
+      <img src={fallback.src} width="900" height="1200" alt={d.hero.posterAlt} />
+    </video>
+  </figure>
+
+  <nav class="topbar" aria-label={d.nav.label}>
+    <details class="menu">
+      <summary>{d.nav.menu}</summary>
+      <div class="sheet">
+        <ul>{links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+        <LangLinks lang={lang} page="home" />
+      </div>
+    </details>
+    <LangLinks lang={lang} page="home" />
+    <ul class="links">{links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+    <a class="button" href={`#${id.contact}`}>{d.nav.cta}</a>
+  </nav>
+
+  <h1 class="hero-name" translate="no">{site.name}</h1>
+  <p class="hero-lead">{d.hero.lead}</p>
+</header>

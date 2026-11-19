@@ -1,0 +1,37 @@
+---
+import { getImage } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import Showcase from '../../components/Showcase.astro';
+import FitCheck from '../../components/FitCheck.astro';
+import Audiences from '../../components/Audiences.astro';
+import Steps from '../../components/Steps.astro';
+import Prices from '../../components/Prices.astro';
+import Letter from '../../components/Letter.astro';
+import Faq from '../../components/Faq.astro';
+import Enquiry from '../../components/Enquiry.astro';
+import Footer from '../../components/Footer.astro';
+import heroShot from '../../assets/shots/hero.jpg';
+import { languages, t, type Lang } from '../../i18n';
+
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang } }));
+}
+const lang = Astro.params.lang as Lang;
+const d = t(lang);
+const poster = await getImage({ src: heroShot, width: 1000, format: 'webp', quality: 80 });
+---
+<Base lang={lang} page="home" title={d.meta.title} description={d.meta.description} preloadImage={poster.src}>
+  <Hero lang={lang} poster={poster.src} />
+  <main id="main">
+    <Showcase lang={lang} />
+    <FitCheck lang={lang} />
+    <Audiences lang={lang} />
+    <Steps lang={lang} />
+    <Prices lang={lang} />
+    <Letter lang={lang} />
+    <Faq lang={lang} />
+    <Enquiry lang={lang} />
+  </main>
+  <Footer lang={lang} page="home" />
+</Base>

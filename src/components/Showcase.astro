@@ -1,0 +1,52 @@
+---
+import { Picture } from 'astro:assets';
+import eye from '../assets/shots/model-eye-level.jpg';
+import plan from '../assets/shots/floor-plan.jpg';
+import tape from '../assets/shots/tape-measure.jpg';
+import tv from '../assets/shots/tv-on-dresser.jpg';
+import { t, type Lang } from '../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const shots = [eye, plan, tape, tv];
+---
+<section class="showcase" id={d.ids.what} aria-labelledby="what-heading" data-tabs>
+  <div class="showcase-inner">
+    <div class="plate">
+      {d.what.items.map((item, i) => (
+        <figure class="panel-figure rise" data-panel-figure={i} hidden={i > 0}>
+          <Picture
+            src={shots[i]}
+            formats={['avif', 'webp']}
+            widths={[480, 720, 960, 1280]}
+            sizes="(max-width: 899px) calc(100vw - 32px), 46vw"
+            alt={item.alt}
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        </figure>
+      ))}
+    </div>
+    <div class="spare">
+      <h2 id="what-heading" class="sr-only">{d.what.heading}</h2>
+      <div class="tabs-wrap rise" style="--i:1">
+        <div class="tabs" role="tablist" aria-label={d.what.tabsLabel} hidden>
+          {d.what.items.map((item, i) => (
+            <button type="button" role="tab" id={`tab-${i}`} aria-controls={`panel-${i}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-tab={i}>{item.tab}</button>
+          ))}
+        </div>
+      </div>
+      <div class="panels rise" style="--i:2">
+        {d.what.items.map((item, i) => (
+          <div class="panel" role="tabpanel" id={`panel-${i}`} aria-labelledby={`tab-${i}`} data-panel={i}>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+      <div class="actions rise" style="--i:3">
+        <a class="primary" href={`#${d.ids.contact}`}>{d.what.primary}</a>
+        <a class="secondary" href={`#${d.ids.prices}`}>{d.what.secondary}</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+import { site } from '../config';
+import { alternates, t, type Lang, type Page } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  page: Page;
+  title: string;
+  description: string;
+  /** a hero poster to preload, when the page has one */
+  preloadImage?: string;
+  noindex?: boolean;
+}
+const { lang, page, title, description, preloadImage, noindex = false } = Astro.props;
+const d = t(lang);
+const base = site.url.replace(/\/$/, '');
+const canonical = new URL(Astro.url.pathname, base + '/').href;
+const others = alternates(page);
+const ogImage = `${base}/og.jpg`;
+---
+<!doctype html>
+<html lang={d.htmlLang} class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    {others.map((o) => <link rel="alternate" hreflang={o.lang} href={base + o.href} />)}
+    <link rel="alternate" hreflang="x-default" href={base + others[0].href} />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/cabinet-grotesk-800.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/cabinet-grotesk-400.woff2" as="font" type="font/woff2" crossorigin />
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.nameInText} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={d.ogLocale} />
+    {(['ro', 'hu', 'en'] as const).filter((l) => l !== lang).map((l) => <meta property="og:locale:alternate" content={t(l).ogLocale} />)}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={d.meta.ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>document.documentElement.classList.replace('no-js', 'js');</script>
+  </head>
+  <body>
+    <a class="skip" href="#main">{d.skip}</a>
+    <slot />
+    <script>
+      import '../scripts/main';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+---
+// The bare domain sends visitors to the Romanian site, the default language.
+import { site } from '../config';
+const base = site.url.replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plan 1:1</title>
+    <meta http-equiv="refresh" content="0; url=/ro/" />
+    <link rel="canonical" href={`${base}/ro/`} />
+    <link rel="alternate" hreflang="ro" href={`${base}/ro/`} />
+    <link rel="alternate" hreflang="hu" href={`${base}/hu/`} />
+    <link rel="alternate" hreflang="en" href={`${base}/en/`} />
+    <link rel="alternate" hreflang="x-default" href={`${base}/ro/`} />
+    <meta name="robots" content="noindex" />
+    <script is:inline>location.replace('/ro/' + location.hash);</script>
+    <style>body{margin:0;background:#000;color:#ddd6c6;font:18px system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}a{color:inherit}</style>
+  </head>
+  <body>
+    <p><a href="/ro/">Română</a> · <a href="/hu/">Magyar</a> · <a href="/en/">English</a></p>
+  </body>
+</html>

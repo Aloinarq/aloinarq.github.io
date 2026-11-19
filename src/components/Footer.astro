@@ -1,0 +1,39 @@
+---
+import { site } from '../config';
+import { alternates, pathFor, t, type Lang, type Page } from '../i18n';
+interface Props { lang: Lang; page: Page }
+const { lang, page } = Astro.props;
+const d = t(lang);
+const home = page === 'home' ? '' : pathFor(lang, 'home');
+const sections = [
+  { href: `${home}#${d.ids.what}`, label: d.nav.what },
+  { href: `${home}#${d.ids.who}`, label: d.nav.who },
+  { href: `${home}#${d.ids.prices}`, label: d.nav.prices },
+  { href: `${home}#${d.ids.faq}`, label: d.nav.faq },
+  { href: `${home}#${d.ids.contact}`, label: d.nav.cta },
+];
+---
+<footer class="footer on-dark">
+  <p class="footer-name" aria-hidden="true" translate="no">{site.name}</p>
+  <div class="grid footer-row">
+    <ul class="places">
+      <li><a href={site.email.startsWith('[') ? `${home}#${d.ids.contact}` : `mailto:${site.email}`}>{site.email}</a></li>
+      <li><a href={site.phone.startsWith('[') ? `${home}#${d.ids.contact}` : `tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></li>
+      <li class="area">{d.footer.area}</li>
+    </ul>
+    <div class="link-cols">
+      <nav aria-labelledby="f-sections"><h2 id="f-sections">{d.footer.sections}</h2><ul>{sections.map((s) => <li><a href={s.href}>{s.label}</a></li>)}</ul></nav>
+      <nav aria-labelledby="f-legal"><h2 id="f-legal">{d.footer.legal}</h2><ul>
+        <li><a href={pathFor(lang, 'privacy')} aria-current={page === 'privacy' ? 'true' : undefined}>{d.footer.privacy}</a></li>
+        <li><a href={pathFor(lang, 'terms')} aria-current={page === 'terms' ? 'true' : undefined}>{d.footer.terms}</a></li>
+      </ul></nav>
+      <nav aria-labelledby="f-langs"><h2 id="f-langs">{d.footer.languages}</h2><ul>
+        {alternates(page).map((o) => <li><a href={o.href} hreflang={o.lang} lang={o.lang} aria-current={o.lang === lang ? 'true' : undefined}>{t(o.lang).languageName}</a></li>)}
+      </ul></nav>
+    </div>
+  </div>
+  <div class="legal-row">
+    <p>{d.footer.line}</p>
+    <a href="#top">{d.footer.top}</a>
+  </div>
+</footer>

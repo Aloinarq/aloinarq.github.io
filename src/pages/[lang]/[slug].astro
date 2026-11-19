@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import Footer from '../../components/Footer.astro';
+import LangLinks from '../../components/LangLinks.astro';
+import { site } from '../../config';
+import { legal } from '../../i18n/legal';
+import { languages, pathFor, t, type Lang } from '../../i18n';
+
+export function getStaticPaths() {
+  return languages.flatMap((lang) =>
+    (['privacy', 'terms'] as const).map((page) => ({ params: { lang, slug: t(lang).slugs[page] }, props: { page } })),
+  );
+}
+const lang = Astro.params.lang as Lang;
+const { page } = Astro.props as { page: 'privacy' | 'terms' };
+const d = t(lang);
+const doc = legal[lang][page];
+---
+<Base lang={lang} page={page} title={`${doc.title} – ${site.nameInText}`} description={doc.description}>
+  <header class="bar-top" id="top">
+    <a class="mark" href={pathFor(lang, 'home')} translate="no">{site.name}</a>
+    <nav aria-label={d.nav.label}>
+      <LangLinks lang={lang} page={page} />
+      <a class="button links-inline" href={`${pathFor(lang, 'home')}#${d.ids.contact}`}>{d.nav.cta}</a>
+    </nav>
+  </header>
+  <main id="main" class="doc">
+    <div class="doc-col">
+      <h1>{doc.title}</h1>
+      <p class="intro">{doc.intro}</p>
+      <p class="updated">{d.legal.updated}</p>
+      {doc.sections.map((s) => (
+        <section>
+          <h2>{s.h}</h2>
+          {s.p?.map((p) => <p>{p}</p>)}
+          {s.list && <ul>{s.list.map((li) => <li>{li}</li>)}</ul>}
+        </section>
+      ))}
+      <a class="back" href={pathFor(lang, 'home')}>{d.legal.back}</a>
+    </div>
+  </main>
+  <Footer lang={lang} page={page} />
+</Base>

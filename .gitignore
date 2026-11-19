@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+.taste-skill/inspect/
+*.log
+
+# the brief stays out of the repository
+website-prompt.md

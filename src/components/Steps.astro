@@ -1,0 +1,51 @@
+---
+import { Image, getImage } from 'astro:assets';
+import top from '../assets/shots/view-top.jpg';
+import front from '../assets/shots/view-front.jpg';
+import side from '../assets/shots/view-side.jpg';
+import tvPoster from '../assets/shots/tv-place-poster.jpg';
+import { site } from '../config';
+import { t, type Lang } from '../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const views = [top, front, side];
+const poster = await getImage({ src: tvPoster, width: 1200, format: 'webp', quality: 78 });
+---
+<section class="section how" id={d.ids.how} aria-labelledby="how-heading">
+  <div class="how-col">
+    <h2 id="how-heading" class="rise">{d.how.heading}</h2>
+    <ol class="stages">
+      <li class="rise">
+        <p><strong>{d.how.steps[0].lead}</strong> {d.how.steps[0].text}</p>
+      </li>
+      <li class="rise">
+        <p><strong>{d.how.steps[1].lead}</strong> {d.how.steps[1].text}</p>
+        <figure class="evidence">
+          <div class="paper" data-ui lang="ro" aria-describedby="contract-caption">
+            <p class="doc-title">CONTRACT DE PRESTĂRI SERVICII ȘI CESIUNE A DREPTURILOR PATRIMONIALE DE AUTOR</p>
+            <p class="doc-no">nr. <span class="blank"></span> din <span class="blank"></span></p>
+            <p class="doc-parties">Între <span class="blank"></span>, în calitate de <b>Beneficiar</b>, și Levente <span class="blank"></span>, persoană fizică, în calitate de <b>Prestator</b>, s-a încheiat prezentul contract.</p>
+          </div>
+          <figcaption id="contract-caption">{d.how.contractLabel}</figcaption>
+        </figure>
+      </li>
+      <li class="rise">
+        <p><strong>{d.how.steps[2].lead}</strong> {d.how.steps[2].text}</p>
+        <figure class="evidence">
+          <div class="views">
+            {views.map((v, i) => <Image src={v} width={240} densities={[1, 2]} alt={d.how.viewAlts[i]} loading="lazy" />)}
+          </div>
+          <figcaption>{d.how.viewsLabel}</figcaption>
+        </figure>
+      </li>
+      <li class="rise">
+        <p><strong>{d.how.steps[3].lead}</strong> {d.how.steps[3].text}</p>
+        <figure class="evidence stage-video">
+          <video data-lazy-video data-src="/media/tv-place.mp4" poster={poster.src} muted loop playsinline preload="none" width="1440" height="844" aria-label={d.how.videoLabel}></video>
+          <figcaption>{d.how.videoLabel}</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </div>
+</section>

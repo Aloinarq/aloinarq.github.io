@@ -1,0 +1,16 @@
+---
+import { alternates, t, type Lang, type Page } from '../i18n';
+interface Props { lang: Lang; page: Page; hash?: string; class?: string }
+const { lang, page, class: cls = 'langs' } = Astro.props;
+const d = t(lang);
+---
+<ul class={cls} aria-label={d.nav.languages}>
+  {alternates(page).map((o) => (
+    <li>
+      <a href={o.href} hreflang={o.lang} lang={o.lang} aria-current={o.lang === lang ? 'true' : undefined}>
+        <span aria-hidden="true">{o.lang.toUpperCase()}</span>
+        <span class="sr-only">{t(o.lang).languageName}</span>
+      </a>
+    </li>
+  ))}
+</ul>

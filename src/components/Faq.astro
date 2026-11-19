@@ -1,0 +1,22 @@
+---
+import { t, pathFor, type Lang } from '../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const privacy = pathFor(lang, 'privacy');
+---
+<section class="section faq" id={d.ids.faq} aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="rise">{d.faq.heading}</h2>
+  <div class="faq-list">
+    {d.faq.items.map((item, i) => (
+      <details class="qa rise" style={`--i:${(i % 4) + 1}`}>
+        <summary><span>{item.q}</span><span class="chev" aria-hidden="true"></span></summary>
+        <p>
+          {item.a.includes(d.faq.privacyLink)
+            ? <Fragment>{item.a.split(d.faq.privacyLink)[0]}<a href={privacy}>{d.faq.privacyLink}</a>{item.a.split(d.faq.privacyLink)[1]}</Fragment>
+            : item.a}
+        </p>
+      </details>
+    ))}
+  </div>
+</section>

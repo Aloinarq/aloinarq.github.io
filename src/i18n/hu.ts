@@ -1,0 +1,286 @@
+import { prices, service, site } from '../config';
+import type { Dict } from './en';
+
+const lej = (n: number) => `${n.toLocaleString('hu-HU')} lej`;
+const example = prices.apartmentExampleArea * prices.apartmentPerSquareMetre;
+
+export const hu: Dict = {
+  lang: 'hu',
+  htmlLang: 'hu',
+  ogLocale: 'hu_HU',
+  languageName: 'Magyar',
+  skip: 'Ugrás a tartalomra',
+  meta: {
+    title: 'Plan 1:1 – szobák szkennelése, méretes alaprajz és 3D modell',
+    description:
+      'iPhone LiDAR-érzékelővel felmérem a szobákat, és méretes alaprajzot meg böngészőben nyíló 3D modellt adok. Belsőépítészeknek, bútorkészítőknek, kivitelezőknek és ingatlanosoknak Romániában.',
+    ogAlt: 'Egy beszkennelt hálószoba 3D modellje felülről, mellette a plan 1:1 név.',
+  },
+  slugs: { privacy: 'adatvedelem', terms: 'urlap-feltetelek' },
+  ids: {
+    what: 'mit-kap',
+    fit: 'elfer',
+    who: 'kinek',
+    how: 'hogyan',
+    prices: 'arak',
+    about: 'rolam',
+    faq: 'kerdesek',
+    contact: 'ajanlatkeres',
+    designers: 'tervezok',
+    makers: 'konyhak',
+    contractors: 'felujitok',
+    agents: 'ingatlan',
+    homeowners: 'lakok',
+  },
+  nav: {
+    label: 'Fő',
+    menu: 'Menü',
+    close: 'Bezárás',
+    what: 'Mit kap',
+    who: 'Kinek szól',
+    prices: 'Árak',
+    faq: 'Kérdések',
+    cta: 'Kérjen ajánlatot',
+    languages: 'Nyelv',
+  },
+  hero: {
+    lead: 'LiDAR-ral felmért szobák méretes alaprajzként és 3D modellként, belsőépítészeknek, bútorkészítőknek, kivitelezőknek és ingatlanosoknak.',
+    videoLabel: 'A hálószobám 3D modellje, október 29-én szkennelve, lassan forogva.',
+    posterAlt: 'Egy hálószoba 3D modellje felülről, babaházként: ágy, gardrób, komód és éjjeliszekrények.',
+  },
+  what: {
+    heading: 'Mit kap',
+    tabsLabel: 'Mit kap',
+    items: [
+      {
+        tab: 'Modell',
+        title: 'A szoba 3D-ben',
+        text: 'Minden szobát 3D modellként építek újra, amely böngészőben nyílik meg, telefonon vagy számítógépen, telepítés nélkül. Nézheti babaházként, felülről, elölről vagy oldalról, vagy szemmagasságban végigsétálhat benne.',
+        alt: 'A 3D modell szemmagasságból: az ágy a bordázott fejtámlával, egy éjjeliszekrény és a gardrób.',
+      },
+      {
+        tab: 'Alaprajz',
+        title: 'Alaprajz m²-rel',
+        text: 'Felülnézeti alaprajz falakkal, ajtókkal, ablakokkal és számozott bútorokkal, a teljes mérettel és az alapterülettel m²-ben, valamint jelmagyarázattal, benne minden darab méretével. Képernyőn jelenik meg; PDF- vagy CAD-export egyelőre nincs.',
+        alt: 'A hálószoba alaprajza: 4,11 × 3,60 m, körülbelül 14,8 m², számozott bútorokkal és mérettáblázattal.',
+      },
+      {
+        tab: 'Mérés',
+        title: 'Mérőszalag a modellben',
+        text: 'Kattintson két pontra, és leolvashatja a távolságot, akár egy irányra rögzítve is. Ha kijelöl egy bútort, látja, mekkora hely marad a falakig és a körülötte álló bútorokig.',
+        alt: 'A mérőszalag a modellben: 83,8 cm az ágy vége és a komód között.',
+      },
+      {
+        tab: 'Tervezés',
+        title: 'Valós méretben',
+        text: 'Valós méretű bútorokat tehet bele egy katalógusból (kanapé, íróasztal, könyvespolc, szőnyeg, lámpa, tévé és még sok más, vagy tetszőleges méret), illetve konkrét termékeket a gyártó által közölt méretek alapján. A darabok a padlón vagy a falon állnak, és megállnak a falnál. A szkennelt bútorok mozgathatók, forgathatók vagy eltávolíthatók, az ajtók nyithatók és csukhatók. Minden elrendezést külön néven menthet, visszavonással, és összehasonlíthatja őket.',
+        alt: 'Egy 55 colos Samsung QN85F a komódon, kijelölve, a méreteivel és a falaktól mért távolságaival.',
+      },
+    ],
+    primary: 'Kérjen ajánlatot',
+    secondary: 'Az árak',
+  },
+  fit: {
+    heading: 'Elfér a komódon?',
+    intro: 'Ez a hálószobám komódos fala, a szkennelés alapján méretarányosan megrajzolva. Válasszon egy tévét, és csúsztassa végig a komódon.',
+    sizesLabel: 'A tévé mérete',
+    sizes: ['43 colos', '55 colos Samsung QN85F', '65 colos', '75 colos'],
+    sizeNotes: ['szokásos méret', 'gyártói méretek', 'szokásos méret', 'szokásos méret'],
+    slider: 'Helyzet a komódon',
+    drawingLabel: 'A komódos fal elölnézetben: balra a fésülködőasztal a tükörrel, középen a komód, jobbra az ajtó.',
+    labels: { vanity: 'fésülködőasztal', mirror: 'tükör', dresser: 'komód', door: 'ajtó' },
+    status: {
+      fits: 'Elfér.',
+      tight: 'Elfér, de csak {gap} cm marad {near}.',
+      hits: 'Itt nem fér el: beleér {into}.',
+    },
+    things: { mirror: { near: 'a tükörig', into: 'a tükörbe' }, door: { near: 'az ajtókeretig', into: 'az ajtókeretbe' } },
+    detail:
+      'Kijelző: {w} × {h} cm, a komód {dresser} cm. A tükörig: {mirror} cm. Az ajtókeretig: {door} cm.',
+    overhang: 'A kijelző szélesebb a komódnál: balra {left} cm-rel, jobbra {right} cm-rel lóg túl rajta, a talp a komódon marad.',
+    noOverhang: 'A kijelző belefér a komód szélességébe.',
+    fallback: 'A 112 cm-es komód közepén az 55 colos Samsung QN85F (122,8 cm széles) mindkét oldalon körülbelül 5 cm-rel lóg túl, és nagyjából egy centiméterre fér el a fésülködőtükörtől.',
+    note: 'A 3D modell egyszerűsített elölnézete. Ha a rés 5 cm alatti, vásárlás előtt mérje meg mérőszalaggal is.',
+    compareHeading: 'Ugyanez a kérdés a 3D modellben, az ágyból nézve',
+    compare: [
+      { caption: 'A komódon.', alt: 'Az ágyból nézve: a tévé a komódon, balra a fésülködőasztal és a rózsaszín szék, jobbra az ajtó.' },
+      { caption: 'A falon, második változatként elmentve.', alt: 'Az ágyból nézve: ugyanaz a tévé a falra szerelve, a komód fölött.' },
+    ],
+  },
+  who: {
+    word: 'Kinek',
+    heading: 'Kinek szól',
+    today: 'Ma',
+    withScan: 'Szkenneléssel',
+    groups: [
+      {
+        key: 'designers',
+        name: 'Belsőépítészeknek és építészeknek',
+        today: 'Az első helyszíni bejárás a mérőszalagé és a jegyzetfüzeté, a felmérési rajzot pedig újra kell rajzolni, mielőtt a tervezés elkezdődhet.',
+        after: 'Az első megbeszélés előtt megvan a 3D modell és az alaprajz m²-rel, az elrendezéseket pedig az ügyfél előtt próbálhatja ki 3D-ben.',
+      },
+      {
+        key: 'makers',
+        name: 'Konyha-, gardrób- és bútorkészítőknek',
+        today: 'Még egy kiszállás egy méret ellenőrzésére, és egy ügyfél, aki nem tudja elképzelni, hogyan fog állni a bútor a szobában.',
+        after: 'A szoba méreteiből és modelljéből tervez, megmutatja az ügyfélnek a bútort a helyén, a kritikus méreteket pedig gyártás előtt a helyszínen ellenőrzi.',
+      },
+      {
+        key: 'contractors',
+        name: 'Felújító kivitelezőknek',
+        today: 'Árajánlat fotókból és egy gyors bejárásból, aztán a falak valódi hossza csak munka közben derül ki.',
+        after: 'Felmért állapot a munka előtt: falak, nyílások és alapterület az árajánlathoz, és a szoba eredeti állapota.',
+      },
+      {
+        key: 'agents',
+        name: 'Ingatlanosoknak és ingatlankezelőknek',
+        today: 'Hirdetések kézi vázlattal vagy alaprajz nélkül, és vevők, akik azt kérdezik, elférnek-e a bútoraik.',
+        after: 'Alaprajz m²-rel a hirdetéshez, és 3D modell, amelyet a vevők egy linkről nyitnak meg.',
+      },
+      {
+        key: 'homeowners',
+        name: 'Lakástulajdonosoknak és bérlőknek',
+        today: 'Kanapé, gardrób vagy tévé a bolti méretek alapján, abban bízva, hogy elfér.',
+        after: 'Előbb a saját szobája 3D modelljében ellenőrzi, valós méretben.',
+      },
+    ],
+  },
+  how: {
+    heading: 'Négy lépés, egy látogatás',
+    steps: [
+      { lead: 'Először küldjön ajánlatkérést.', text: `Írja meg, mely szobákról van szó, melyik településen, és miről szeretne dönteni. ${service.replyWorkingDays} munkanapon belül válaszolok egy árral és egy lehetséges időponttal.` },
+      { lead: 'Utána írásos szerződés.', text: 'Minden munka előtt írásos szerződést kap; a fizetés banki átutalással történik, e szerződés alapján. Benne vannak a szobák, amit kap, az ár és az átadás határideje.' },
+      { lead: 'A megbeszélt napon: a szkennelés.', text: `Minden szobát végigjárok egy iPhone Próval. A LiDAR-érzékelő és az Apple RoomPlan rögzíti a falakat, ajtókat, ablakokat és a fő bútorokat, közben referenciafotókat is készítek. Szobánként nagyjából ${service.minutesPerRoomOnSite} perccel számoljon.` },
+      { lead: `${service.deliveryWorkingDays} munkanapon belül: átadás és közös tervezés.`, text: 'Privát linket kap a modellhez és az alaprajzhoz. Együtt nyitjuk meg, elhelyezzük benne, amit fontolgat, és minden elrendezést külön néven elmentünk.' },
+    ],
+    contractLabel: 'A szerződésminta első sorai, románul: ez az aláírt változat.',
+    viewsLabel: 'Amit a szkennelés rögzít: a szoba felülről, elölről és oldalról.',
+    viewAlts: ['A hálószoba modellje felülről.', 'A hálószoba modellje elölről.', 'A hálószoba modellje oldalról.'],
+    videoLabel: 'Egy 55 colos Samsung QN85F a katalógusból a komódra kerül, majd a falra.',
+  },
+  prices: {
+    heading: 'Bevezető árak',
+    intro: 'Új, egyszemélyes szolgáltatás, a bejáratott 3D-túrák és helyszíni felmérések ára alatt.',
+    groups: [
+      {
+        name: 'Szkennelés',
+        items: [
+          { name: 'Egy szoba', price: `${prices.oneRoom} lejtől`, text: `A szkennelés, a szoba 3D modellje és alaprajza, ${service.linkOnlineMonths} hónapig online.` },
+          { name: 'Teljes lakás', price: `${prices.apartmentPerSquareMetre} lej/m²-től`, text: `Minden szoba, legalább ${lej(prices.apartmentMinimum)}. ${prices.apartmentExampleArea} m² esetén ${lej(example)}.` },
+        ],
+      },
+      {
+        name: 'Extrák',
+        items: [
+          { name: 'Segítség a berendezéshez', price: `${prices.planningPerRoom} lejtől szobánként`, text: `Legfeljebb ${prices.planningPiecesPerRoom} kiválasztott darabot helyezek el a modellben, a konkrét termékeket a közölt méreteik alapján.` },
+          { name: 'Kiszállás', price: `${site.city}: díjtalan`, text: `${site.city} területén kívül az árát aláírás előtt megadom.` },
+        ],
+      },
+      {
+        name: 'Cégeknek',
+        items: [
+          { name: 'Az első szoba', price: prices.businessFirstRoom === 0 ? 'ingyenes' : lej(prices.businessFirstRoom), text: 'Egy szoba a következő projektjéből, hogy valós munkán ítélhesse meg a modellt. Cégenként egy.' },
+        ],
+      },
+    ],
+    note: 'Ezek kezdő árak. A végleges ár a szerződésben szerepel, minden munka előtt.',
+    photoAlt: 'A 3D modell telefonon megnyitva, a tévével a komódon.',
+    photoCaption: 'A modell telefonon, alkalmazás nélkül.',
+  },
+  about: {
+    heading: 'Rólam',
+    photoTodo: site.photo,
+    paragraphs: [
+      'Levente vagyok. Egy iPhone Pro LiDAR-érzékelőjével szobákat szkennelek, és mindegyiket méretes alaprajzzá és böngészőben megnyitható 3D modellé építem újra.',
+      'Az oldalon minden kép a saját hálószobám, amelyet október 29-én szkenneltem, és ugyanabban a nézegetőben építettem újra, amelyet Ön is kapna.',
+      'Egyedül dolgozom, a saját nevemen, nem cégként. Minden munka előtt írásos szerződést kötünk, és e szerződés alapján banki átutalással fizet.',
+      'A szkennelésnek vannak korlátai, és jobb, ha tőlem hallja őket. PDF- vagy CAD-export egyelőre nincs, és a szkenner csak azt látja, amit a bejárás során lát: nálam egy behúzott függöny mögötti erkély egyszerű ablakként jelent meg. Ezért szkennelés előtt kinyitok mindent, aminek látszania kell.',
+      'Románul, magyarul és angolul dolgozom, Románia egész területén, előre egyeztetett látogatással.',
+    ],
+    signoff: 'Levente',
+    role: 'Szobaszkennelés és 3D modellek',
+  },
+  faq: {
+    heading: 'Kérdések foglalás előtt',
+    items: [
+      {
+        q: 'Mennyire pontos?',
+        a: 'A szobát az iPhone LiDAR-érzékelője és az Apple RoomPlan méri fel, ami bútorok és elrendezések tervezéséhez megfelelő. Pontossági számot nem adok meg. Ami milliméterre készül, például munkalap vagy beépített bútor, annak a kritikus méreteit a helyszínen ellenőrizze, ahogy egyébként is tenné.',
+      },
+      {
+        q: 'Mennyi ideig tart egy szkennelés?',
+        a: `Szobánként nagyjából ${service.minutesPerRoomOnSite} perc a helyszínen, így egy háromszobás lakás jóval egy órán belül kész. A modell és az alaprajz ${service.deliveryWorkingDays} munkanapon belül következik.`,
+      },
+      {
+        q: 'Mit kell tennem?',
+        a: 'Engedjen be, és nyissa ki, aminek látszania kell: függönyöket, ajtókat, szekrényeket, ha a belsejük számít. A bútorokat nem kell elmozdítani; a modell részévé válnak, és ott áthelyezhetők vagy eltávolíthatók.',
+      },
+      {
+        q: 'Mit kapok, és hogyan nyitom meg?',
+        a: `Egy privát linket, amely bármely korszerű böngészőben megnyitja a 3D modellt és az alaprajzot, telefonon vagy számítógépen, alkalmazás és fiók nélkül. ${service.linkOnlineMonths} hónapig marad online. A nézegető gombjai egyelőre angolul vannak, ezért átadáskor együtt végigmegyünk rajta.`,
+      },
+      {
+        q: 'Beszkennelhetem magam a szobákat?',
+        a: 'Nem. A rögzítő alkalmazás nem nyilvános, ezért én megyek ki, és én végzem a szkennelést.',
+      },
+      {
+        q: 'Hogyan működik a szerződés és a fizetés?',
+        a: 'Minden munka előtt írásos szerződést kap; a fizetés banki átutalással történik, e szerződés alapján. Szerepelnek benne a szobák, amit kap, az ár és az átadás határideje, és mindketten aláírjuk.',
+      },
+      {
+        q: 'Mi történik a szkenneléssel?',
+        a: 'Az Öné. Bizalmasan kezelem, csak az Ön projektjéhez használom, soha nem teszem közzé, és kérésére törlöm. A részletek az adatvédelmi tájékoztatóban vannak.',
+      },
+      {
+        q: 'Mi nincs benne?',
+        a: 'Kültéri terek és egész épületek, fotorealisztikus látványtervek, CAD-, DWG- vagy PDF-rajzok, letölthető alkalmazás és belsőépítészeti tervezés. Az alaprajz és a modell a szobákat a mostani állapotukban mutatja, hogy tervezhessen bennük.',
+      },
+    ],
+    privacyLink: 'adatvédelmi tájékoztató',
+  },
+  contact: {
+    heading: 'Meséljen a szobáról',
+    sentence: `${service.replyWorkingDays} munkanapon belül válaszolok egy árral és egy időponttal. Semmi sincs lefoglalva, amíg mindketten alá nem írjuk a szerződést.`,
+    fields: {
+      name: 'Az Ön neve',
+      contact: 'E-mail vagy telefon',
+      property: 'Az ingatlan típusa',
+      propertyOptions: ['Lakás', 'Ház', 'Iroda', 'Üzlet vagy bemutatóterem', 'Egyéb'],
+      rooms: 'Szobák száma',
+      roomsOptions: ['1', '2', '3', '4', '5', '6 vagy több'],
+      city: 'Település',
+      message: 'Miről szeretne dönteni?',
+      messagePlaceholder: 'Például: elfér-e egy 240 cm-es sarokkanapé, és hová kerüljön a tévé?',
+      consent: 'Hozzájárulok, hogy az adataimat az ajánlatkérés megválaszolására használja, az {privacy} és az {terms} szerint.',
+      consentPrivacy: 'adatvédelmi tájékoztató',
+      consentTerms: 'űrlap feltételei',
+    },
+    submit: 'Ajánlatkérés küldése',
+    sending: 'Küldés…',
+    sent: 'Köszönöm. Az ajánlatkérés elküldve; két munkanapon belül válaszolok.',
+    error: 'Az ajánlatkérést nem sikerült elküldeni. Kérem, írjon nekem: {email}.',
+    notConnected: 'Az űrlap még nincs bekötve ({endpoint}). Írjon nekem: {email}, vagy hívjon: {phone}.',
+    or: 'Vagy írjon közvetlenül:',
+    required: 'Kötelező',
+  },
+  footer: {
+    reach: 'Írjon vagy hívjon',
+    area: `${site.city}, Románia. Látogatás előzetes egyeztetéssel.`,
+    sections: 'Ezen az oldalon',
+    legal: 'Jogi információk',
+    privacy: 'Adatvédelmi tájékoztató',
+    terms: 'Az űrlap feltételei',
+    languages: 'Nyelvek',
+    line: 'A Plan 1:1 Levente saját szolgáltatása, amelyet magánszemélyként nyújt Romániában.',
+    top: 'Vissza az elejére',
+  },
+  legal: {
+    back: 'Vissza a főoldalra',
+    updated: 'Utolsó frissítés: 2026. november 19.',
+  },
+  notFound: {
+    title: 'Ez az oldal nem létezik',
+    text: 'Lehet, hogy a link régi vagy elgépelt.',
+    home: 'Ugrás a főoldalra',
+  },
+};

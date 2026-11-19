@@ -51,3 +51,25 @@ in the US, work in exactly this field); "Releveu 3D" (implies a formal survey wi
 6. FAQ: accuracy (no number), time per room, what you do, what you get and how it opens,
    contract and payment, privacy, viewer language → answers.
 7. Enquiry: form (name, contact, property type, rooms, city, message) + email/phone [TODO].
+
+## Idea
+On this page, the name's own claim (1:1: everything at its real size) becomes the monument: "plan 1:1"
+set across the first screen over the real 3D model of the bedroom, and returning at full width as the
+footer. Competitor test: a Matterport tour provider cannot sign "plan 1:1"; the bedroom is Levente's.
+Live thing: "Will it fit on the dresser?" A front view of the scanned dresser wall at scale; pick a TV
+(43, 55 Samsung QN85F, 65, 75 inch) and slide it; the gaps to the vanity mirror and the door frame and
+the overhang update in cm. No-JS fallback: the same drawing with the 55-inch centred and its numbers.
+
+## Critique, round 1
+Seen in one second: the wordmark "plan 1:1" over the lit dollhouse.
+Idea: the name's claim, real size, as the monument.
+Live thing: the dresser-wall fit check.
+Layout words: hero=monument / what=split+tabs / fit=board / who=giant word+bars / how=run-in column /
+prices=menu / about=letter on field / faq=wide heading+indent / contact=coupon / footer=name first.
+Scores: design 7.5 · usability 8 · creativity 7.5 · content 8.5 → overall 7.8.
+Caps: none (gate clean, 11 real pictures, two clips, a live thing).
+Top three:
+1. About: the TODO portrait circle is invisible on the surface field → give it the ground colour.
+2. Prices: name and price sit ~600 px apart on desktop → narrow the list to 36rem.
+3. How it works: the run-in column leaves the left third empty for three screens; accepted as the
+   blueprint's composition, but the evidence pieces must carry it (contract fragment, views, clip).

@@ -264,7 +264,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .prices-head .intro { margin-top: 20px; font-size: var(--step-body); }
 .prices-head figure { margin-top: 32px; }
 .prices-head figcaption { margin-top: 8px; font-size: var(--step-small); color: var(--muted); }
-.menu-list { grid-column: 5 / span 7; max-width: 46rem; }
+.menu-list { grid-column: 5 / span 6; max-width: 36rem; }
 .group { break-inside: avoid; padding-top: 48px; }
 .group:first-child { padding-top: 0; }
 .group h3 { font-size: var(--step-lead); font-weight: 500; letter-spacing: 0; }
@@ -272,7 +272,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .item-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; font-size: var(--step-body); font-weight: 500; }
 .item-row .price { text-align: right; font-variant-numeric: tabular-nums; }
 .items p { margin-top: 4px; font-size: var(--step-small); color: var(--muted); max-width: 44ch; }
-.prices .note { grid-column: 5 / span 7; margin-top: -8px; font-size: var(--step-small); color: var(--muted); }
+.prices .note { grid-column: 5 / span 6; margin-top: -8px; font-size: var(--step-small); color: var(--muted); }
 @media (max-width: 899px) {
   .prices-head, .menu-list, .prices .note { grid-column: 1 / -1; }
   .prices-head figure { width: 60%; }
@@ -283,7 +283,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* ---------- about: a letter ---------- */
 .about { background: var(--surface); }
 .letter { width: min(100%, 560px); margin: 0 auto; }
-.portrait { width: 44px; height: 44px; border-radius: 50%; background: var(--surface); display: grid; place-items: center; line-height: 1; text-align: center; color: var(--muted); overflow: hidden; }
+.portrait { width: 44px; height: 44px; border-radius: 50%; background: var(--bg); display: grid; place-items: center; line-height: 1; text-align: center; color: var(--muted); overflow: hidden; }
 .portrait span { font-size: var(--step-small); }
 .letter-body { margin-top: 28px; display: grid; gap: 1.2em; font-size: var(--step-body); line-height: 1.55; }
 .letter mark { background: var(--plan-added); color: var(--ink); padding: 0 .12em; }

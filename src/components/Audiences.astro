@@ -15,8 +15,8 @@ const ids = d.ids as Record<string, string>;
           <details class="bar" id={ids[g.key]} open={i === 0}>
             <summary><span>{g.name}</span><span class="plus" aria-hidden="true"></span></summary>
             <div class="body">
-              <div class="before"><h4>{d.who.today}</h4><p>{g.today}</p></div>
-              <div class="after"><h4>{d.who.withScan}</h4><p>{g.after}</p></div>
+              <div class="before"><p><strong>{d.who.today}:</strong> {g.today}</p></div>
+              <div class="after"><p><strong>{d.who.withScan}:</strong> {g.after}</p></div>
             </div>
           </details>
         </li>

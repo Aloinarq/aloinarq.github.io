@@ -17,20 +17,20 @@ const d = t(lang);
 const doc = legal[lang][page];
 ---
 <Base lang={lang} page={page} title={`${doc.title} – ${site.nameInText}`} description={doc.description}>
-  <header class="bar-top" id="top">
-    <a class="mark" href={pathFor(lang, 'home')} translate="no">{site.name}</a>
-    <nav aria-label={d.nav.label}>
+  <header class="doc-hero" id="top">
+    <nav class="doc-nav" aria-label={d.nav.label}>
       <LangLinks lang={lang} page={page} />
-      <a class="button links-inline" href={`${pathFor(lang, 'home')}#${d.ids.contact}`}>{d.nav.cta}</a>
+      <a class="button" href={`${pathFor(lang, 'home')}#${d.ids.contact}`}>{d.nav.cta}</a>
     </nav>
+    <a class="doc-mark" href={pathFor(lang, 'home')} translate="no" aria-label={`${site.nameInText}: ${d.legal.back}`}>{site.name}</a>
   </header>
   <main id="main" class="doc">
     <div class="doc-col">
-      <h1>{doc.title}</h1>
-      <p class="intro">{doc.intro}</p>
-      <p class="updated">{d.legal.updated}</p>
+      <h1 class="rise">{doc.title}</h1>
+      <p class="intro rise" style="--i:1">{doc.intro}</p>
+      <p class="updated rise" style="--i:2">{d.legal.updated}</p>
       {doc.sections.map((s) => (
-        <section>
+        <section class="rise">
           <h2>{s.h}</h2>
           {s.p?.map((p) => <p>{p}</p>)}
           {s.list && <ul>{s.list.map((li) => <li>{li}</li>)}</ul>}

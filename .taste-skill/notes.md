@@ -73,3 +73,12 @@ Top three:
 2. Prices: name and price sit ~600 px apart on desktop → narrow the list to 36rem.
 3. How it works: the run-in column leaves the left third empty for three screens; accepted as the
    blueprint's composition, but the evidence pieces must carry it (contract fragment, views, clip).
+
+## Critique, round 2 (after fixes; gate clean in ro, hu, en)
+Seen in one second: the wordmark over the dollhouse; on the phone, the dollhouse then the wordmark.
+Layout words: hero=monument / what=split+tabs / fit=board / who=giant word+bars / how=run-in on a dark
+field / prices=menu / about=letter on field / faq=wide heading+indent / contact=coupon / footer=name first.
+Scores: design 8 · usability 8 · creativity 7.5 · content 8.5 → overall 8.0.
+Remaining, accepted: the TV-placement clip shows the desktop viewer, whose UI text is too small to read
+on a phone (the motion still reads); the phone wordmark spans about 80% so the giant word fits.
+Legal pages: inspector fails only "few pictures" (text documents; no photo added for the meter).

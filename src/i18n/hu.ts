@@ -97,7 +97,7 @@ export const hu: Dict = {
     things: { mirror: { near: 'a tükörig', into: 'a tükörbe' }, door: { near: 'az ajtókeretig', into: 'az ajtókeretbe' } },
     detail:
       'Kijelző: {w} × {h} cm, a komód {dresser} cm. A tükörig: {mirror} cm. Az ajtókeretig: {door} cm.',
-    overhang: 'A kijelző szélesebb a komódnál: balra {left} cm-rel, jobbra {right} cm-rel lóg túl rajta, a talp a komódon marad.',
+    overhang: 'A kijelző balra {left} cm-rel, jobbra {right} cm-rel lóg túl a komódon, a talp a komódon marad.',
     noOverhang: 'A kijelző belefér a komód szélességébe.',
     fallback: 'A 112 cm-es komód közepén az 55 colos Samsung QN85F (122,8 cm széles) mindkét oldalon körülbelül 5 cm-rel lóg túl, és nagyjából egy centiméterre fér el a fésülködőtükörtől.',
     note: 'A 3D modell egyszerűsített elölnézete. Ha a rés 5 cm alatti, vásárlás előtt mérje meg mérőszalaggal is.',

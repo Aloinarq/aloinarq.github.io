@@ -97,7 +97,7 @@ export const ro: Dict = {
     things: { mirror: { near: 'oglindă', into: 'oglindă' }, door: { near: 'tocul ușii', into: 'tocul ușii' } },
     detail:
       'Ecran de {w} × {h} cm pe o comodă de {dresser} cm. Până la oglindă: {mirror} cm. Până la tocul ușii: {door} cm.',
-    overhang: 'Ecranul e mai lat decât comoda și iese în afară cu {left} cm în stânga și {right} cm în dreapta; piciorul rămâne pe comodă.',
+    overhang: 'Ecranul iese în afara comodei cu {left} cm în stânga și {right} cm în dreapta; piciorul rămâne pe comodă.',
     noOverhang: 'Ecranul se încadrează în lățimea comodei.',
     fallback: 'Centrat pe comoda de 112 cm, Samsung QN85F de 55 de inchi (122,8 cm lățime) iese în afară cu circa 5 cm pe fiecare parte și trece pe lângă oglinda măsuței la aproximativ un centimetru.',
     note: 'O vedere simplificată din față a modelului 3D. Când distanța e sub 5 cm, verificați-o cu ruleta înainte să cumpărați.',

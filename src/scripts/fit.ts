@@ -21,7 +21,8 @@ export const SIZES = [
   { w: 168.0, h: 96.4 },
 ];
 export const DEFAULT_SIZE = 1;
-export const SLIDE = { min: ROOM.dresser.x0 + STAND.base / 2, max: ROOM.dresser.x1 - STAND.base / 2 };
+/** slider range on a 0.5 cm grid that contains the centre, so the default sits exactly in the middle */
+export const SLIDE = { min: 1.35, max: 86.35, step: 0.5 };
 export const DEFAULT_X = (ROOM.dresser.x0 + ROOM.dresser.x1) / 2;
 
 export interface Fit {

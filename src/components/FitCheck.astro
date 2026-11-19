@@ -76,7 +76,7 @@ const midY = (r.y0 + r.y1) / 2;
       </fieldset>
       <div class="slider">
         <label for="fit-x">{f.slider}</label>
-        <input id="fit-x" type="range" min={SLIDE.min.toFixed(1)} max={SLIDE.max.toFixed(1)} step="0.5" value={DEFAULT_X.toFixed(2)} />
+        <input id="fit-x" type="range" min={SLIDE.min} max={SLIDE.max} step={SLIDE.step} value={DEFAULT_X} />
       </div>
     </div>
 

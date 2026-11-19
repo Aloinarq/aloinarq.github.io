@@ -96,7 +96,7 @@ export const en = {
     things: { mirror: { near: 'mirror', into: 'mirror' }, door: { near: 'door frame', into: 'door frame' } },
     detail:
       'Panel {w} × {h} cm on a {dresser} cm dresser. Gap to the mirror: {mirror} cm. Gap to the door frame: {door} cm.',
-    overhang: 'The panel is wider than the dresser and hangs over by {left} cm on the left and {right} cm on the right; the stand stays on top.',
+    overhang: 'The panel hangs over the dresser by {left} cm on the left and {right} cm on the right; the stand stays on top.',
     noOverhang: 'The panel sits within the dresser’s width.',
     fallback: 'Centred on the 112 cm dresser, the 55-inch Samsung QN85F (122.8 cm wide) hangs over by about 5 cm on each side and clears the vanity mirror by about a centimetre.',
     note: 'A simplified front view of the 3D model. When the gap is under 5 cm, check it with a tape before you buy.',

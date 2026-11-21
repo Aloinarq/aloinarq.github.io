@@ -17,7 +17,7 @@ export const site = {
   email: '[TODO: email]',
   phone: '[TODO: phone]',
   /** Used for canonical, hreflang and social-share links. */
-  url: 'https://domain.example', // [TODO: domain]
+  url: 'https://aloinarq.github.io', // temporary GitHub Pages URL; swap for the real domain later
   /** Where the enquiry form posts (a form service or your own endpoint). */
   formEndpoint: '[TODO: form endpoint]',
   /** Photo for the About letter: put the file in src/assets and import it in Letter.astro. */

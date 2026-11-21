@@ -1,9 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// The domain is not chosen yet: change `site` (and `url` in src/config.ts) once it is. [TODO: domain]
+// Temporary GitHub Pages URL until a real domain is chosen. Change `site`
+// (and `url` in src/config.ts) to the real domain once it exists.
 export default defineConfig({
-  site: 'https://domain.example',
+  site: 'https://aloinarq.github.io',
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'auto' },
   devToolbar: { enabled: false },

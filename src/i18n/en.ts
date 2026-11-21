@@ -178,7 +178,8 @@ export const en = {
       {
         name: 'For businesses',
         items: [
-          { name: 'Your first room', price: prices.businessFirstRoom === 0 ? 'free' : lei(prices.businessFirstRoom), text: 'One room of your next project, so you can judge the model on real work. One per business.' },
+          { name: 'Your first room', price: prices.businessFirstRoom === 0 ? 'free' : lei(prices.businessFirstRoom), text: `For businesses in ${site.city.en}, Reghin or anywhere else within ${prices.businessFirstRoomRadiusKm} km of ${site.city.en}: one room of your next project, so you can judge the model on real work. One per business.` },
+          { name: 'Businesses elsewhere', price: `from ${lei(prices.oneRoom)} per room`, text: 'Travel is quoted separately, once we have agreed a date.' },
         ],
       },
     ],

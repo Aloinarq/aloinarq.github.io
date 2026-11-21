@@ -179,7 +179,8 @@ export const ro: Dict = {
       {
         name: 'Pentru firme',
         items: [
-          { name: 'Prima cameră', price: prices.businessFirstRoom === 0 ? 'gratuit' : lei(prices.businessFirstRoom), text: 'O cameră din următorul proiect, ca să judecați modelul pe o lucrare reală. Una pentru fiecare firmă.' },
+          { name: 'Prima cameră', price: prices.businessFirstRoom === 0 ? 'gratuit' : lei(prices.businessFirstRoom), text: `Pentru firmele din ${site.city.ro}, Reghin sau din orice altă localitate aflată la cel mult ${prices.businessFirstRoomRadiusKm} km de ${site.city.ro}: o cameră din următorul proiect, ca să judecați modelul pe o lucrare reală. Una pentru fiecare firmă.` },
+          { name: 'Firme din alte zone', price: `de la ${lei(prices.oneRoom)} pe cameră`, text: 'Deplasarea se stabilește separat, după ce convenim data.' },
         ],
       },
     ],

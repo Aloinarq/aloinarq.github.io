@@ -179,7 +179,8 @@ export const hu: Dict = {
       {
         name: 'Cégeknek',
         items: [
-          { name: 'Az első szoba', price: prices.businessFirstRoom === 0 ? 'ingyenes' : lej(prices.businessFirstRoom), text: 'Egy szoba a következő projektjéből, hogy valós munkán ítélhesse meg a modellt. Cégenként egy.' },
+          { name: 'Az első szoba', price: prices.businessFirstRoom === 0 ? 'ingyenes' : lej(prices.businessFirstRoom), text: `${site.city.hu}, Szászrégen vagy bármely más, ${site.city.hu} ${prices.businessFirstRoomRadiusKm} km-es körzetében lévő település cégeinek: egy szoba a következő projektjéből, hogy valós munkán ítélhesse meg a modellt. Cégenként egy.` },
+          { name: 'Cégek máshol', price: `${prices.oneRoom} lejtől szobánként`, text: 'A kiszállás árát külön adom meg, miután megegyeztünk az időpontban.' },
         ],
       },
     ],

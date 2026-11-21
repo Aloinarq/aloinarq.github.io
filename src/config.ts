@@ -41,8 +41,10 @@ export const prices = {
   apartmentExampleArea: 60,
   planningPerRoom: 150,
   planningPiecesPerRoom: 5,
-  /** First room for a business: 0 means free; any other number is shown as a price. */
+  /** First room for a business near the base city: 0 means free; any other number is shown as a price. */
   businessFirstRoom: 0,
+  /** The first-room offer applies to businesses within this distance of the base city (Reghin included by name). */
+  businessFirstRoomRadiusKm: 50,
 } as const;
 
 /** Promises the site makes about time. Keep them true. */

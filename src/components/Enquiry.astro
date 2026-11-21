@@ -8,11 +8,15 @@ const c = d.contact;
 const f = c.fields;
 const [before, rest] = f.consent.split('{privacy}');
 const [middle, after] = rest.split('{terms}');
+// With no form service configured, the form opens the visitor's email app, addressed to site.email.
+const usePost = /^https?:\/\//.test(site.formEndpoint);
 const messages = {
   sending: c.sending,
   sent: c.sent,
   error: fill(c.error, { email: site.email }),
-  notConnected: fill(c.notConnected, { endpoint: site.formEndpoint, email: site.email, phone: site.phone }),
+  opened: fill(c.opened, { email: site.email }),
+  subject: c.subject,
+  labels: c.mailLabels,
 };
 ---
 <section class="contact" id={d.ids.contact} aria-labelledby="contact-heading">
@@ -24,7 +28,16 @@ const messages = {
         <p class="direct">{c.or}<br /><a href={site.email.startsWith('[') ? `#${d.ids.contact}` : `mailto:${site.email}`}>{site.email}</a><br /><a href={site.phone.startsWith('[') ? `#${d.ids.contact}` : `tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></p>
       </div>
     </div>
-    <form action={site.formEndpoint} method="post" data-enquiry data-messages={JSON.stringify(messages)} data-endpoint={site.formEndpoint}>
+    <form
+      action={usePost ? site.formEndpoint : `mailto:${site.email}`}
+      method="post"
+      enctype={usePost ? undefined : 'text/plain'}
+      data-enquiry
+      data-mode={usePost ? 'post' : 'mailto'}
+      data-email={site.email}
+      data-endpoint={site.formEndpoint}
+      data-messages={JSON.stringify(messages)}
+    >
       <input type="hidden" name="language" value={lang} />
       <div class="two">
         <div class="field"><label for="f-name">{f.name}</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
@@ -51,6 +64,7 @@ const messages = {
         <span>{before}<a href={pathFor(lang, 'privacy')}>{f.consentPrivacy}</a>{middle}<a href={pathFor(lang, 'terms')}>{f.consentTerms}</a>{after}</span>
       </label>
       <button class="submit" type="submit">{c.submit}</button>
+      {!usePost && <p class="form-how">{c.how}</p>}
       <p class="form-status" role="status" aria-live="polite"></p>
     </form>
   </div>

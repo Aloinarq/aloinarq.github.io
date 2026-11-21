@@ -10,7 +10,7 @@ nr. ________ din data de ________
 
 și
 
-1.2. **Levente** ________________ [numele de familie], persoană fizică, cu domiciliul în ______________________________, identificat cu CI seria ____ nr. ________, CNP ________________, telefon ________________, e-mail ________________, cont IBAN ______________________________ deschis la ________________, denumit în continuare **„Prestatorul”**,
+1.2. **Horvath Levente**, persoană fizică, cu domiciliul în ______________________________, identificat cu CI seria ____ nr. ________, CNP ________________, telefon +40 740 234 096, e-mail horvathlevente14@gmail.com, cont IBAN ______________________________ deschis la ________________, denumit în continuare **„Prestatorul”**,
 
 au convenit să încheie prezentul contract, în următoarele condiții.
 
@@ -74,7 +74,7 @@ d) o sesiune de predare și planificare împreună [la fața locului / online], 
 
 7.1. Scanarea, fotografiile de referință, modelele și planurile („**Datele scanării**”) sunt ale Beneficiarului. Prestatorul le păstrează confidențial, le folosește numai pentru executarea prezentului contract, nu le publică și nu le transmite altor persoane, cu excepția furnizorilor tehnici strict necesari (găzduire, e-mail), care acționează în numele său.
 
-7.2. Prestatorul prelucrează datele cu caracter personal ale Beneficiarului și pe cele care pot apărea în Datele scanării în calitate de operator, potrivit Regulamentului (UE) 2016/679 (GDPR) și politicii de confidențialitate publicate la adresa ______________________________.
+7.2. Prestatorul prelucrează datele cu caracter personal ale Beneficiarului și pe cele care pot apărea în Datele scanării în calitate de operator, potrivit Regulamentului (UE) 2016/679 (GDPR) și politicii de confidențialitate publicate la adresa https://aloinarq.github.io/ro/confidentialitate/.
 
 7.3. Prestatorul șterge Datele scanării și dezactivează linkul privat: (a) la cererea scrisă a Beneficiarului (inclusiv prin e-mail), în cel mult ____ zile, și confirmă ștergerea în scris; sau (b) la expirarea perioadei de la art. 4.3, dacă părțile nu au convenit altfel în scris. Se păstrează numai documentele pe care legea obligă Prestatorul să le păstreze (contractul, dovezile de plată).
 
@@ -122,7 +122,7 @@ Prezentul contract a fost încheiat astăzi, ________, în două exemplare origi
 
 | Beneficiarul | Prestatorul |
 | --- | --- |
-| ______________________________ | Levente ______________________ |
+| ______________________________ | Horvath Levente |
 | semnătura | semnătura |
 
 ---

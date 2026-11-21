@@ -287,9 +287,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* ---------- about: a letter ---------- */
 .about { background: var(--surface); }
 .letter { width: min(100%, 560px); margin: 0 auto; }
-.portrait { width: 44px; height: 44px; border-radius: 50%; background: var(--bg); display: grid; place-items: center; line-height: 1; text-align: center; color: var(--muted); overflow: hidden; }
-.portrait span { font-size: var(--step-small); }
-.letter-body { margin-top: 28px; display: grid; gap: 1.2em; font-size: var(--step-body); line-height: 1.55; }
+.portrait { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; margin-bottom: 28px; }
+.letter-body { display: grid; gap: 1.2em; font-size: var(--step-body); line-height: 1.55; }
 .letter mark { background: var(--plan-added); color: var(--ink); padding: 0 .12em; }
 .signoff { margin-top: 36px; font-size: var(--step-lead); font-weight: 500; }
 .role { font-size: var(--step-small); color: var(--muted); }
@@ -328,7 +327,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .coupon h2 { font-size: var(--step-head); max-width: 13ch; }
 .coupon-left p { max-width: 30ch; }
 .coupon .direct { font-size: var(--step-small); }
-.coupon .direct a { display: inline-block; margin-top: 4px; font-size: var(--step-body); font-weight: 500; }
+.coupon .direct a { display: inline-block; margin-top: 4px; font-size: var(--step-body); font-weight: 500; overflow-wrap: anywhere; }
 .coupon form { display: grid; gap: 12px; padding: 48px; }
 .field { display: grid; gap: 6px; }
 .field label, .field .label { font-size: var(--step-small); font-weight: 500; }
@@ -346,6 +345,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .submit { min-height: 56px; margin-top: 8px; background: var(--ink); color: #fff; border: 0; border-radius: 0; font-weight: 500; cursor: pointer; transition: background-color .2s var(--ease), transform .2s var(--ease); }
 .submit:hover { background: #000; }
 .submit:active { transform: translateY(1px); }
+.form-how { font-size: var(--step-small); line-height: 1.45; }
 .form-status { min-height: 1.5em; font-size: var(--step-small); }
 .form-status:empty { display: none; }
 @media (max-width: 899px) {
@@ -363,7 +363,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .footer { background: var(--ink); color: var(--bg); padding: 40px var(--margin) 36px; overflow: hidden; }
 .footer-name { font-size: calc((100vw - 2 * var(--margin)) / 2.62); font-weight: 800; line-height: .8; padding-bottom: .2em; letter-spacing: -0.045em; white-space: nowrap; margin-left: -0.04em; }
 .footer-row { margin-top: 72px; }
-.places { grid-column: 1 / span 5; list-style: none; display: grid; gap: 8px; font-size: var(--step-head); font-weight: 500; line-height: 1.15; }
+.places { grid-column: 1 / span 5; list-style: none; display: grid; gap: 8px; font-size: var(--step-head); font-weight: 500; line-height: 1.15; overflow-wrap: anywhere; }
 .places a { text-decoration: none; }
 .places a:hover { text-decoration: underline; }
 .places .area { font-size: var(--step-small); font-weight: 400; margin-top: 10px; max-width: 32ch; }
@@ -375,6 +375,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .legal-row { display: flex; justify-content: space-between; gap: 24px; margin-top: 96px; font-size: var(--step-small); color: #cfc8b8; }
 @media (max-width: 899px) {
   .places, .link-cols { grid-column: 1 / -1; }
+  .places { font-size: var(--step-lead); }
 
   .link-cols { grid-template-columns: 1fr 1fr; margin-top: 48px; }
   .legal-row { flex-direction: column; margin-top: 64px; }

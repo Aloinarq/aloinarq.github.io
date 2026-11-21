@@ -12,7 +12,7 @@ no. ________ dated ________
 
 and
 
-1.2. **Levente** ________________ [surname], a private individual, residing at ______________________________, identity card series ____ no. ________, CNP ________________, phone ________________, email ________________, IBAN ______________________________ at ________________, hereinafter **"the Provider"**,
+1.2. **Levente Horvath** (Horvath Levente), a private individual, residing at ______________________________, identity card series ____ no. ________, CNP ________________, phone +40 740 234 096, email horvathlevente14@gmail.com, IBAN ______________________________ at ________________, hereinafter **"the Provider"**,
 
 have agreed to conclude this contract on the following terms.
 
@@ -76,7 +76,7 @@ d) one handover and planning session together [on site / online], of at most ___
 
 7.1. The scan, the reference photos, the models and the plans ("**the Scan Data**") belong to the Client. The Provider keeps them confidential, uses them only to perform this contract, does not publish them and does not pass them to anyone else, except the strictly necessary technical providers (hosting, email) acting on his behalf.
 
-7.2. The Provider processes the Client's personal data, and any personal data that may appear in the Scan Data, as controller, under Regulation (EU) 2016/679 (GDPR) and the privacy policy published at ______________________________.
+7.2. The Provider processes the Client's personal data, and any personal data that may appear in the Scan Data, as controller, under Regulation (EU) 2016/679 (GDPR) and the privacy policy published at https://aloinarq.github.io/ro/confidentialitate/ (in English: https://aloinarq.github.io/en/privacy/).
 
 7.3. The Provider deletes the Scan Data and deactivates the private link: (a) at the Client's written request (including by email), within ____ days, confirming the deletion in writing; or (b) when the period in art. 4.3 ends, unless the parties have agreed otherwise in writing. Only the documents the law requires the Provider to keep (the contract, proof of payment) are kept.
 
@@ -124,7 +124,7 @@ This contract was concluded today, ________, in two original copies, one for eac
 
 | The Client | The Provider |
 | --- | --- |
-| ______________________________ | Levente ______________________ |
+| ______________________________ | Levente Horvath |
 | signature | signature |
 
 ---

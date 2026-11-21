@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/fetch-fonts.mjs",
     "dev": "astro dev --port 4321",
+    "prebuild": "node scripts/fetch-fonts.mjs",
     "build": "astro build",
     "preview": "astro preview --port 4322"
   },

@@ -13,9 +13,18 @@ npm run preview
 
 ## Change things in one place
 
-- `src/config.ts`: every price, time promise, contact detail and placeholder. Search for `[TODO` to see what is still missing (city, email, phone, form endpoint, domain, full name and address for the privacy policy, photo).
+- `src/config.ts`: every price, time promise and contact detail (name, city, email, phone), the site URL, and how the enquiry form sends.
 - `src/i18n/ro.ts`, `hu.ts`, `en.ts`: the words of each language. `src/i18n/legal.ts`: privacy policy and form terms.
-- `astro.config.mjs`: set `site` to the real domain when it exists (it feeds canonical and hreflang links).
+- `astro.config.mjs`: `site` must match `url` in `src/config.ts` (it feeds canonical and hreflang links).
+
+Live at https://aloinarq.github.io/ (GitHub Pages, deployed by `.github/workflows/deploy.yml` on every push to `main`).
+
+### Optional, when you want them
+
+- **Portrait in the About letter:** save a square photo as `src/assets/portrait.jpg` (or `.png` / `.webp`). It appears automatically; without it the letter starts with the text.
+- **A form service instead of the email app:** by default the enquiry form opens the visitor's email app with the enquiry written out, addressed to the email in `src/config.ts`. To have the site send it instead, create an account with a form service, paste its endpoint URL into `formEndpoint`, and name the service in the "Who else sees it" section of `src/i18n/legal.ts`.
+- **Your own domain:** set it in `src/config.ts` (`url`) and `astro.config.mjs` (`site`), add a `public/CNAME` file with the domain, and point the domain's DNS at GitHub Pages.
+- **Where client models are hosted:** the privacy policy says the host is named in each contract; decide it before the first client.
 
 ## Pages
 
@@ -41,4 +50,4 @@ Audience sections for outreach emails (each opens its own panel):
 - `src/assets/shots/` and `public/media/`: screenshots and two short clips of the 3D viewer showing Levente's own bedroom scan.
 - `.taste-skill/`: design notes (direction, idea, critique rounds).
 
-Fonts: Cabinet Grotesk by Indian Type Foundry, from Fontshare (ITF Free Font License), self-hosted in `public/fonts/`.
+Fonts: Cabinet Grotesk by Indian Type Foundry, from Fontshare, under the ITF Free Font License (https://www.fontshare.com/licenses/itf-ffl). The licence allows self-hosting on your own website but not redistributing the files through a repository, so `scripts/fetch-fonts.mjs` downloads them into `public/fonts/` before `dev` and `build` (including on GitHub Actions) and they are not committed.

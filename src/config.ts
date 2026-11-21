@@ -1,7 +1,6 @@
 /**
  * Every number, contact detail and placeholder on the site lives here.
  * Change a value once and it changes on every page, in all three languages.
- * Search for "[TODO" to find what still has to be filled in before publishing.
  */
 
 export const site = {
@@ -10,19 +9,28 @@ export const site = {
   /** The name inside running text. */
   nameInText: 'Plan 1:1',
   owner: 'Levente',
-  /** Shown only in the privacy policy, as the data controller. */
-  ownerFullName: '[TODO: full name]',
-  ownerAddress: '[TODO: postal address]',
-  city: '[TODO: city]',
-  email: '[TODO: email]',
-  phone: '[TODO: phone]',
-  /** Used for canonical, hreflang and social-share links. */
-  url: 'https://aloinarq.github.io', // temporary GitHub Pages URL; swap for the real domain later
-  /** Where the enquiry form posts (a form service or your own endpoint). */
-  formEndpoint: '[TODO: form endpoint]',
-  /** Photo for the About letter: put the file in src/assets and import it in Letter.astro. */
-  photo: '[TODO: photo]',
+  /** Full name as each language writes it: family name first in Hungarian and Romanian. */
+  ownerFullName: { ro: 'Horvath Levente', hu: 'Horvath Levente', en: 'Levente Horvath' },
+  /** Base city, as each language names it. Travel inside it is included in the price. */
+  city: { ro: 'Târgu Mureș', hu: 'Marosvásárhely', en: 'Târgu Mureș' },
+  email: 'horvathlevente14@gmail.com',
+  /** Shown as written; the tel: link strips the spaces. */
+  phone: '+40 740 234 096',
+  /** Used for canonical, hreflang and social-share links. Change it (and `site` in astro.config.mjs) for a custom domain. */
+  url: 'https://aloinarq.github.io',
+  /**
+   * Where the enquiry form posts. Empty: the form opens the visitor's email app with the enquiry
+   * written out, addressed to `email` (no form service, nothing stored by the site). To use a form
+   * service instead, paste its endpoint URL here and name the service in src/i18n/legal.ts.
+   */
+  formEndpoint: '',
+  /** Where email is received, named in the privacy policy. */
+  emailProvider: 'Google (Gmail)',
+  /** Who hosts this website, named in the privacy policy. */
+  host: 'GitHub Pages (GitHub)',
 } as const;
+/* The About letter shows a round portrait when a file named portrait.jpg, .jpeg, .png or .webp
+   exists in src/assets/; without one, the letter starts with the text. */
 
 /** Prices in lei. All are "from" prices; the contract states the final price. */
 export const prices = {

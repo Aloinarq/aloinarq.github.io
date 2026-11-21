@@ -7,3 +7,6 @@ dist/
 
 # the brief stays out of the repository
 website-prompt.md
+
+# fetched at build time (the font licence forbids redistributing the files via a repository)
+public/fonts/*.woff2

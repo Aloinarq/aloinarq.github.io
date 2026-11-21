@@ -125,14 +125,30 @@ if (form) {
   const msg = JSON.parse(form.dataset.messages!);
   const status = form.querySelector<HTMLElement>('.form-status')!;
   const button = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+  const value = (name: string) => ((form.elements.namedItem(name) as HTMLInputElement | null)?.value ?? '').trim();
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
-    const endpoint = form.dataset.endpoint || '';
-    if (!/^https?:\/\//.test(endpoint)) { status.textContent = msg.notConnected; return; }
+    if (form.dataset.mode === 'mailto') {
+      // No form service: open the visitor's email app with the enquiry written out.
+      const l = msg.labels;
+      const subject = fill(msg.subject, { property: value('property_type'), city: value('city') });
+      const body = [
+        `${l.name}: ${value('name')}`,
+        `${l.contact}: ${value('contact')}`,
+        `${l.property}: ${value('property_type')}`,
+        `${l.rooms}: ${value('rooms')}`,
+        `${l.city}: ${value('city')}`,
+        '',
+        value('message'),
+      ].join('\n');
+      location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      status.textContent = msg.opened;
+      return;
+    }
     button.disabled = true; status.textContent = msg.sending;
     try {
-      const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      const res = await fetch(form.dataset.endpoint!, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
       if (!res.ok) throw new Error(String(res.status));
       form.reset(); status.textContent = msg.sent;
     } catch {

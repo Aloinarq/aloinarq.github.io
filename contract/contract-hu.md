@@ -12,7 +12,7 @@ szám: ________, kelt: ________
 
 és
 
-1.2. **Levente** ________________ [családi név], magánszemély, lakcím: ______________________________, személyi igazolvány sorozat ____ szám ________, személyi szám (CNP): ________________, telefon: ________________, e-mail: ________________, IBAN: ______________________________, bank: ________________, a továbbiakban: **„Szolgáltató”**,
+1.2. **Horvath Levente**, magánszemély, lakcím: ______________________________, személyi igazolvány sorozat ____ szám ________, személyi szám (CNP): ________________, telefon: +40 740 234 096, e-mail: horvathlevente14@gmail.com, IBAN: ______________________________, bank: ________________, a továbbiakban: **„Szolgáltató”**,
 
 az alábbi feltételekkel kötik meg ezt a szerződést.
 
@@ -76,7 +76,7 @@ d) egy közös átadási és tervezési alkalom [a helyszínen / online], legfel
 
 7.1. A szkennelés, a referenciafotók, a modellek és az alaprajzok (a továbbiakban: **„Szkennelési adatok”**) a Megrendelőé. A Szolgáltató bizalmasan kezeli őket, kizárólag e szerződés teljesítésére használja, nem teszi közzé és másnak nem adja át, kivéve a nevében eljáró, feltétlenül szükséges technikai szolgáltatókat (tárhely, e-mail).
 
-7.2. A Szolgáltató a Megrendelő személyes adatait és a Szkennelési adatokban esetleg megjelenő személyes adatokat adatkezelőként kezeli, az (EU) 2016/679 rendelet (GDPR) és a ______________________________ címen közzétett adatvédelmi tájékoztató szerint.
+7.2. A Szolgáltató a Megrendelő személyes adatait és a Szkennelési adatokban esetleg megjelenő személyes adatokat adatkezelőként kezeli, az (EU) 2016/679 rendelet (GDPR) és a https://aloinarq.github.io/ro/confidentialitate/ címen (magyarul: https://aloinarq.github.io/hu/adatvedelem/) közzétett adatvédelmi tájékoztató szerint.
 
 7.3. A Szolgáltató törli a Szkennelési adatokat és megszünteti a privát linket: (a) a Megrendelő írásos (e-mailben is közölt) kérésére, legfeljebb ____ napon belül, és a törlést írásban megerősíti; vagy (b) a 4.3. cikkben meghatározott időszak végén, ha a felek írásban másként nem állapodtak meg. Csak azokat a dokumentumokat őrzi meg, amelyeket jogszabály előír (a szerződést, a fizetési igazolásokat).
 
@@ -124,7 +124,7 @@ Ez a szerződés a mai napon, ________, két eredeti példányban jött létre, 
 
 | A Megrendelő | A Szolgáltató |
 | --- | --- |
-| ______________________________ | Levente ______________________ |
+| ______________________________ | Horvath Levente |
 | aláírás | aláírás |
 
 ---

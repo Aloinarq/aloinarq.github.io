@@ -1,14 +1,16 @@
 ---
+import { Image } from 'astro:assets';
 import { t, type Lang } from '../i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const d = t(lang);
+// A portrait appears when src/assets/portrait.(jpg|jpeg|png|webp) exists; otherwise the letter starts with the text.
+const found = Object.values(import.meta.glob<{ default: ImageMetadata }>('../assets/portrait.{jpg,jpeg,png,webp}', { eager: true }))[0];
 ---
 <section class="section about" id={d.ids.about} aria-labelledby="about-heading">
   <article class="letter">
     <h2 id="about-heading" class="sr-only">{d.about.heading}</h2>
-    <!-- [TODO: photo] replace this circle with a 88 × 88 px portrait of Levente -->
-    <div class="portrait rise" role="img" aria-label={d.about.photoTodo}><span aria-hidden="true">TODO</span></div>
+    {found && <Image class="portrait rise" src={found.default} width={88} height={88} alt={d.about.photoAlt} />}
     <div class="letter-body">
       {d.about.paragraphs.map((p, i) => <p class="rise" style={`--i:${i + 1}`}>{p}</p>)}
     </div>

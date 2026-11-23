@@ -1,0 +1,35 @@
+/* Development only. Base.astro inlines this file under `npm run dev` and never in a build, so visitors
+   never download it. The previous palette, graphite and teal, switched on by the palette button
+   (it sets data-palette="graphite" on <html>). */
+:root[data-palette='graphite'] {
+  --bg: #e4e9e8;
+  --surface: #cfd8d6;
+  --ink: #1f2933;
+  --muted: #47535e;
+  --accent: #0f766e;
+  --accent-press: #0d5f59;
+  --accent-ink: #ffffff;
+  /* the accent as it reads on the dark bands */
+  --accent-light: #6cc7ba;
+  --field: #1f2933;
+  --field-tone: #2e3a46;
+  --field-ink: #ffffff;
+  --night: #000000;
+  --night-ink: #e4e9e8;
+  /* roles a palette swap must also set: hovers, the carousel, the dark bands, the form */
+  --raise: #eef2f1;
+  --surface-hover: #bccac7;
+  --tab-idle: #5f6d77;
+  --tab-sep: #9aa6b2;
+  --band: #1f2933;
+  --band-ink: #e6ebee;
+  --band-muted: #c9d2d6;
+  --band-raised: #2a3540;
+  --placeholder: #a9b6c2;
+  /* the "will it fit" drawing board, in the viewer's own floor-plan colours */
+  --fit-paper: #eceee8; --fit-room: #e1e6dc; --fit-line: #293e42; --fit-label: #293e42;
+  --fit-furniture: #bcc9d5; --fit-mirror: #d9e2e9; --fit-mirror-edge: #73837d; --fit-dresser: #b8cbbd;
+  --fit-opening: #cfcabd; --fit-casing: #be753d; --fit-tv: #f0d28c; --fit-tv-edge: #293e42; --fit-warn: #8a2f1c;
+}
+.dev-palette { position: fixed; left: 12px; bottom: 12px; z-index: 1000; padding: 8px 12px; border: 1px solid #fff; border-radius: 0; background: #000; color: #fff; font: 500 13px/1.2 var(--font); cursor: pointer; opacity: .85; }
+.dev-palette:hover { opacity: 1; }

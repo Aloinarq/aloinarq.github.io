@@ -2,7 +2,7 @@
 import { Picture } from 'astro:assets';
 import onDresser from '../assets/shots/from-bed-dresser.jpg';
 import onWall from '../assets/shots/from-bed-wall.jpg';
-import { ROOM, STAND, SIZES, DEFAULT_SIZE, DEFAULT_X, SLIDE, compute, cm, cm1 } from '../scripts/fit';
+import { ROOM, STAND, SIZES, DEFAULT_SIZE, DEFAULT_X, SLIDE, compute, cm, cm1, gapLabel } from '../scripts/fit';
 import { fill, t, type Lang } from '../i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -21,6 +21,11 @@ const strings = {
   dresser: cm1(ROOM.dresser.x1 - ROOM.dresser.x0, locale),
 };
 const midY = (r.y0 + r.y1) / 2;
+// Gap labels always sit just inside the TV, next to their gap (same rule as main.ts).
+const mirrorText = `${cm(r.gapMirror, locale)} cm`;
+const doorText = `${cm(r.gapDoor, locale)} cm`;
+const mirrorLabel = gapLabel(r.x0, 'left');
+const doorLabel = gapLabel(r.x1, 'right');
 ---
 <section class="section fit" id={d.ids.fit} aria-labelledby="fit-heading">
   <div class="fit-top">
@@ -31,37 +36,37 @@ const midY = (r.y0 + r.y1) / 2;
   <div class="fit-board rise" style="--i:2" data-fit data-strings={JSON.stringify(strings)}>
     <svg class="fit-svg" viewBox="-130 30 342 252" role="img" aria-labelledby="fit-svg-title">
       <title id="fit-svg-title">{f.drawingLabel}</title>
-      <rect x="-130" y={Y(ROOM.ceiling)} width={ROOM.corner + 130} height={ROOM.ceiling} fill="#e1e6dc" />
-      <rect x={ROOM.corner} y="20" width="8" height="262" fill="#293e42" />
-      <rect x="-130" y={Y(0)} width="350" height="9" fill="#293e42" />
+      <rect x="-130" y={Y(ROOM.ceiling)} width={ROOM.corner + 130} height={ROOM.ceiling} class="f-room" />
+      <rect x={ROOM.corner} y="20" width="8" height="262" class="f-line" />
+      <rect x="-130" y={Y(0)} width="350" height="9" class="f-line" />
       <!-- vanity, hutch and the round mirror -->
-      <rect x={ROOM.vanity.x0} y={Y(ROOM.vanity.top)} width={ROOM.vanity.x1 - ROOM.vanity.x0} height={ROOM.vanity.top} fill="#bcc9d5" />
-      <rect x={ROOM.hutch.x0} y={Y(ROOM.hutch.y1)} width={ROOM.hutch.x1 - ROOM.hutch.x0} height={ROOM.hutch.y1 - ROOM.hutch.y0} fill="#bcc9d5" />
-      <circle cx={ROOM.mirror.cx} cy={Y(ROOM.mirror.cy)} r={ROOM.mirror.r} fill="#d9e2e9" stroke="#73837d" stroke-width="1.2" />
-      <rect x={ROOM.mirror.cx - 2} y={Y(ROOM.mirror.y0 + 3)} width="4" height="3" fill="#73837d" />
+      <rect x={ROOM.vanity.x0} y={Y(ROOM.vanity.top)} width={ROOM.vanity.x1 - ROOM.vanity.x0} height={ROOM.vanity.top} class="f-furniture" />
+      <rect x={ROOM.hutch.x0} y={Y(ROOM.hutch.y1)} width={ROOM.hutch.x1 - ROOM.hutch.x0} height={ROOM.hutch.y1 - ROOM.hutch.y0} class="f-furniture" />
+      <circle cx={ROOM.mirror.cx} cy={Y(ROOM.mirror.cy)} r={ROOM.mirror.r} class="f-mirror" stroke-width="1.2" />
+      <rect x={ROOM.mirror.cx - 2} y={Y(ROOM.mirror.y0 + 3)} width="4" height="3" class="f-mirror-edge" />
       <!-- dresser -->
-      <rect x={ROOM.dresser.x0} y={Y(ROOM.dresser.top)} width={ROOM.dresser.x1 - ROOM.dresser.x0} height={ROOM.dresser.top} fill="#b8cbbd" />
-      <!-- door: casing in the plan's door colour, the opening behind it -->
-      <rect x={ROOM.door.x0} y={Y(ROOM.door.top)} width={ROOM.door.x1 - ROOM.door.x0} height={ROOM.door.top} fill="#cfcabd" />
-      <rect x={ROOM.door.casingX0} y={Y(ROOM.door.casingTop)} width={ROOM.door.x0 - ROOM.door.casingX0} height={ROOM.door.casingTop} fill="#be753d" />
-      <rect x={ROOM.door.x1} y={Y(ROOM.door.casingTop)} width={ROOM.door.casingX1 - ROOM.door.x1} height={ROOM.door.casingTop} fill="#be753d" />
-      <rect x={ROOM.door.casingX0} y={Y(ROOM.door.casingTop)} width={ROOM.door.casingX1 - ROOM.door.casingX0} height={ROOM.door.casingTop - ROOM.door.top} fill="#be753d" />
-      <g class="names" font-size="5.6" fill="#293e42">
+      <rect x={ROOM.dresser.x0} y={Y(ROOM.dresser.top)} width={ROOM.dresser.x1 - ROOM.dresser.x0} height={ROOM.dresser.top} class="f-dresser" />
+      <!-- door: the casing, and the opening behind it -->
+      <rect x={ROOM.door.x0} y={Y(ROOM.door.top)} width={ROOM.door.x1 - ROOM.door.x0} height={ROOM.door.top} class="f-opening" />
+      <rect x={ROOM.door.casingX0} y={Y(ROOM.door.casingTop)} width={ROOM.door.x0 - ROOM.door.casingX0} height={ROOM.door.casingTop} class="f-casing" />
+      <rect x={ROOM.door.x1} y={Y(ROOM.door.casingTop)} width={ROOM.door.casingX1 - ROOM.door.x1} height={ROOM.door.casingTop} class="f-casing" />
+      <rect x={ROOM.door.casingX0} y={Y(ROOM.door.casingTop)} width={ROOM.door.casingX1 - ROOM.door.casingX0} height={ROOM.door.casingTop - ROOM.door.top} class="f-casing" />
+      <g class="names f-label" font-size="5.6">
         <text x={ROOM.hutch.x0 + 3} y={Y(ROOM.hutch.y1) - 3}>{f.labels.vanity}</text>
         <text x={ROOM.dresser.x0 + 3} y={Y(ROOM.dresser.top) + 9}>{f.labels.dresser}</text>
         <text x={ROOM.door.x0 + 4} y={Y(ROOM.door.top) + 10}>{f.labels.door}</text>
       </g>
-      <!-- the TV, in the viewer's "added by you" yellow -->
+      <!-- the TV, the one piece the visitor moves, in the viewer's "added by you" yellow (--fit-tv) -->
       <g id="fit-tv">
-        <rect id="fit-panel" x={r.x0} y={Y(r.y1)} width={r.w} height={r.h} fill="#f0d28c" stroke="#293e42" stroke-width="1.4" />
-        <rect id="fit-neck" x={r.xc - 2.5} y={Y(r.y0)} width="5" height={STAND.lift} fill="#293e42" />
-        <rect id="fit-base" x={r.xc - STAND.base / 2} y={Y(ROOM.dresser.top + 1.4)} width={STAND.base} height="1.4" fill="#293e42" />
+        <rect id="fit-panel" x={r.x0} y={Y(r.y1)} width={r.w} height={r.h} class="f-tv" stroke-width="1.4" />
+        <rect id="fit-neck" x={r.xc - 2.5} y={Y(r.y0)} width="5" height={STAND.lift} class="f-tv-edge" />
+        <rect id="fit-base" x={r.xc - STAND.base / 2} y={Y(ROOM.dresser.top + 1.4)} width={STAND.base} height="1.4" class="f-tv-edge" />
       </g>
-      <g class="dims" font-size="6" font-weight="800" fill="#293e42">
-        <rect id="gapbar-mirror" x={ROOM.mirror.x1} y={Y(midY) - 1} width={Math.max(0, r.gapMirror)} height="2" fill="#8a2f1c" />
-        <text id="gaptext-mirror" x={ROOM.mirror.x1 + Math.max(0, r.gapMirror) / 2} y={Y(midY) - 5} text-anchor="middle">{cm(r.gapMirror, locale)} cm</text>
-        <rect id="gapbar-door" x={r.x1} y={Y(midY) - 1} width={Math.max(0, r.gapDoor)} height="2" fill="#293e42" />
-        <text id="gaptext-door" x={r.x1 + Math.max(0, r.gapDoor) / 2} y={Y(midY) - 5} text-anchor="middle">{cm(r.gapDoor, locale)} cm</text>
+      <g class="dims f-label" font-size="6" font-weight="800">
+        <rect id="gapbar-mirror" x={ROOM.mirror.x1} y={Y(midY) - 1} width={Math.max(0, r.gapMirror)} height="2" class="f-gap" data-warn={String(r.gapMirror < 5)} />
+        <text id="gaptext-mirror" x={mirrorLabel.x} y={Y(midY) - 5} text-anchor={mirrorLabel.anchor}>{mirrorText}</text>
+        <rect id="gapbar-door" x={r.x1} y={Y(midY) - 1} width={Math.max(0, r.gapDoor)} height="2" class="f-gap" data-warn={String(r.gapDoor < 5)} />
+        <text id="gaptext-door" x={doorLabel.x} y={Y(midY) - 5} text-anchor={doorLabel.anchor}>{doorText}</text>
       </g>
     </svg>
 
@@ -82,20 +87,46 @@ const midY = (r.y0 + r.y1) / 2;
 
     <div class="readout">
       <p class="status live" aria-live="polite" data-tone={r.tone} id="fit-status">{fill(f.status.tight, { gap: cm(r.gapMirror, locale), near: f.things.mirror.near })}</p>
-      <p class="live" id="fit-detail">{fill(f.detail, { w: cm1(r.w, locale), h: cm1(r.h, locale), dresser: strings.dresser, mirror: cm(r.gapMirror, locale), door: cm(r.gapDoor, locale) })} {fill(f.overhang, { left: cm1(r.overLeft, locale), right: cm1(r.overRight, locale) })}</p>
+      <!-- the full sentence is for screen readers; the gauges below show the same numbers at a glance -->
+      <p class="live sr-only" id="fit-detail">{fill(f.detail, { w: cm1(r.w, locale), h: cm1(r.h, locale), dresser: strings.dresser, mirror: cm(r.gapMirror, locale), door: cm(r.gapDoor, locale) })} {fill(f.overhang, { left: cm1(r.overLeft, locale), right: cm1(r.overRight, locale) })}</p>
+      <div class="gauges" aria-hidden="true">
+        <div class="gauge" data-gauge="mirror" data-warn={String(r.gapMirror < 5)}>
+          <span class="g-value"><span class="g-num">{r.gapMirror < 0 ? '×' : cm(r.gapMirror, locale)}</span><span class="g-unit">cm</span></span>
+          <span class="g-label">{f.readout.mirror}</span>
+        </div>
+        <div class="gauge" data-gauge="door" data-warn={String(r.gapDoor < 5)}>
+          <span class="g-value"><span class="g-num">{r.gapDoor < 0 ? '×' : cm(r.gapDoor, locale)}</span><span class="g-unit">cm</span></span>
+          <span class="g-label">{f.readout.door}</span>
+        </div>
+      </div>
+      <div class="specs" aria-hidden="true">
+        <div><span class="s-value" data-spec="screen">{cm1(r.w, locale)} × {cm1(r.h, locale)} cm</span><span class="s-label">{f.readout.screen}</span></div>
+        <div><span class="s-value">{strings.dresser} cm</span><span class="s-label">{f.readout.dresser}</span></div>
+        <div><span class="s-value" data-spec="over">{cm1(r.overLeft, locale)} / {cm1(r.overRight, locale)} cm</span><span class="s-label">{f.readout.overhang}</span></div>
+      </div>
     </div>
     <p class="fit-note">{f.note}</p>
   </div>
 
   <div class="fit-compare">
-    <h3 class="rise">{f.compareHeading}</h3>
-    <div class="pair">
-      {[onDresser, onWall].map((img, i) => (
-        <figure class="rise" style={`--i:${i + 1}`}>
-          <Picture src={img} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(max-width: 899px) 100vw, 48vw" alt={f.compare[i].alt} loading="lazy" />
-          <figcaption>{f.compare[i].caption}</figcaption>
-        </figure>
-      ))}
+    <div class="compare-top">
+      <h3 class="rise">{f.compareHeading}</h3>
+      <p class="compare-hint" hidden>{f.compareHint}</p>
+    </div>
+    <!-- side by side without script and on phones; on desktop main.ts stacks the two versions under a
+         divider to drag, and the version names beside the picture glide the divider to show each in full -->
+    <div class="compare-stage">
+      <button type="button" class="version" data-show="0" hidden>{f.compare[0].caption}</button>
+      <div class="pair" data-compare>
+        {[onDresser, onWall].map((img, i) => (
+          <figure class="rise" style={`--i:${i + 1}`}>
+            <Picture src={img} formats={['avif', 'webp']} widths={[480, 800, 1200, 1600]} sizes="(max-width: 899px) 100vw, 70vw" alt={f.compare[i].alt} loading="lazy" />
+            <figcaption>{f.compare[i].caption}</figcaption>
+          </figure>
+        ))}
+        <input class="compare-range" type="range" min="0" max="100" step="1" value="50" aria-label={f.compareSlider} hidden />
+      </div>
+      <button type="button" class="version" data-show="1" hidden>{f.compare[1].caption}</button>
     </div>
   </div>
 </section>

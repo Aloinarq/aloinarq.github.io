@@ -36,12 +36,17 @@ const shots = [eye, plan, tape, tv];
         </div>
       </div>
       <div class="panels rise" style="--i:2">
-        {d.what.items.map((item, i) => (
-          <div class="panel" role="tabpanel" id={`panel-${i}`} aria-labelledby={`tab-${i}`} data-panel={i}>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </div>
-        ))}
+        {d.what.items.map((item, i) => {
+          // The first sentence is the lead; the rest follows as a quieter note.
+          const [lead, ...rest] = item.text.split(/(?<=\.)\s+/);
+          return (
+            <div class="panel" role="tabpanel" id={`panel-${i}`} aria-labelledby={`tab-${i}`} data-panel={i}>
+              <h3>{item.title}</h3>
+              <p class="lead">{lead}</p>
+              {rest.length > 0 && <p class="more">{rest.join(' ')}</p>}
+            </div>
+          );
+        })}
       </div>
       <div class="actions rise" style="--i:3">
         <a class="primary" href={`#${d.ids.contact}`}>{d.what.primary}</a>

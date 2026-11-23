@@ -54,3 +54,16 @@ export const cm = (n: number, locale: string) => {
   return v.toLocaleString(locale);
 };
 export const cm1 = (n: number, locale: string) => (Math.round(n * 10) / 10).toLocaleString(locale, { maximumFractionDigits: 1 });
+
+/**
+ * Where a gap's "N cm" label goes: always just inside the TV, against the edge next to that gap
+ * ('left' for the mirror side, 'right' for the door side), clear of the TV outline. It never sits in
+ * the gap itself, so it can't overlap the frame, the mirror or the door, and never jumps.
+ */
+export function gapLabel(tvEdge: number, side: 'left' | 'right') {
+  const PAD = 1.5;
+  const FRAME = 1.4; // the TV outline's stroke width
+  return side === 'left'
+    ? { x: tvEdge + FRAME + PAD, anchor: 'start' as const }
+    : { x: tvEdge - FRAME - PAD, anchor: 'end' as const };
+}

@@ -1,22 +1,46 @@
 ---
+import { Picture } from 'astro:assets';
+import phone from '../assets/shots/phone.jpg';
 import { t, pathFor, type Lang } from '../i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const d = t(lang);
 const privacy = pathFor(lang, 'privacy');
+// "What do I receive, and how do I open it?" is the fourth question in every language; its answer shows
+// the model open on a phone (the photo's alt text and caption live with the prices strings).
+const OPEN_ON_PHONE = 3;
+// Two columns that stack independently (first half left, second half right), so an open tile only pushes
+// down the tiles under it and never leaves a hole beside it. Reading order stays 1 to 8.
+const half = Math.ceil(d.faq.items.length / 2);
+const columns = [d.faq.items.slice(0, half), d.faq.items.slice(half)];
 ---
 <section class="section faq" id={d.ids.faq} aria-labelledby="faq-heading">
   <h2 id="faq-heading" class="rise">{d.faq.heading}</h2>
   <div class="faq-list">
-    {d.faq.items.map((item, i) => (
-      <details class="qa rise" style={`--i:${(i % 4) + 1}`}>
-        <summary><span>{item.q}</span><span class="chev" aria-hidden="true"></span></summary>
-        <p>
-          {item.a.includes(d.faq.privacyLink)
-            ? <Fragment>{item.a.split(d.faq.privacyLink)[0]}<a href={privacy}>{d.faq.privacyLink}</a>{item.a.split(d.faq.privacyLink)[1]}</Fragment>
-            : item.a}
-        </p>
-      </details>
+    {columns.map((items, c) => (
+      <div class="faq-col">
+        {items.map((item, k) => {
+          const i = c * half + k;
+          return (
+            <details class="qa rise" style={`--i:${(i % 4) + 1}`}>
+              <summary><span>{item.q}</span><span class="chev" aria-hidden="true"></span></summary>
+              <div class={i === OPEN_ON_PHONE ? 'qa-body has-photo' : 'qa-body'}>
+                <p>
+                  {item.a.includes(d.faq.privacyLink)
+                    ? <Fragment>{item.a.split(d.faq.privacyLink)[0]}<a href={privacy}>{d.faq.privacyLink}</a>{item.a.split(d.faq.privacyLink)[1]}</Fragment>
+                    : item.a}
+                </p>
+                {i === OPEN_ON_PHONE && (
+                  <figure class="qa-photo">
+                    <Picture src={phone} formats={['avif', 'webp']} widths={[300, 450, 600]} sizes="220px" alt={d.prices.photoAlt} loading="lazy" />
+                    <figcaption>{d.prices.photoCaption}</figcaption>
+                  </figure>
+                )}
+              </div>
+            </details>
+          );
+        })}
+      </div>
     ))}
   </div>
 </section>

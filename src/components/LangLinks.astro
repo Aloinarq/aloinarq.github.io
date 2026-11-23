@@ -1,16 +1,38 @@
 ---
 import { alternates, t, type Lang, type Page } from '../i18n';
-interface Props { lang: Lang; page: Page; hash?: string; class?: string }
-const { lang, page, class: cls = 'langs' } = Astro.props;
+// variant 'list': the three language codes in a row (the phone menu); 'menu': a globe button that opens
+// the languages by name (the headers). main.ts closes the menu on a click outside it or on Escape.
+interface Props { lang: Lang; page: Page; variant?: 'list' | 'menu' }
+const { lang, page, variant = 'list' } = Astro.props;
 const d = t(lang);
 ---
-<ul class={cls} aria-label={d.nav.languages}>
-  {alternates(page).map((o) => (
-    <li>
-      <a href={o.href} hreflang={o.lang} lang={o.lang} aria-current={o.lang === lang ? 'true' : undefined}>
-        <span aria-hidden="true">{o.lang.toUpperCase()}</span>
-        <span class="sr-only">{t(o.lang).languageName}</span>
-      </a>
-    </li>
-  ))}
-</ul>
+{variant === 'menu' ? (
+  <details class="lang-menu">
+    <summary>
+      <svg class="globe" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" /><ellipse cx="12" cy="12" rx="4" ry="9" /><path d="M3 12h18M4.6 7.5h14.8M4.6 16.5h14.8" />
+      </svg>
+      <span class="sr-only">{d.nav.languages}: {d.languageName}</span>
+      <span aria-hidden="true">{lang.toUpperCase()}</span>
+      <span class="caret" aria-hidden="true"></span>
+    </summary>
+    <ul class="lang-list" aria-label={d.nav.languages}>
+      {alternates(page).map((o) => (
+        <li>
+          <a href={o.href} hreflang={o.lang} lang={o.lang} aria-current={o.lang === lang ? 'true' : undefined}>{t(o.lang).languageName}</a>
+        </li>
+      ))}
+    </ul>
+  </details>
+) : (
+  <ul class="langs" aria-label={d.nav.languages}>
+    {alternates(page).map((o) => (
+      <li>
+        <a href={o.href} hreflang={o.lang} lang={o.lang} aria-current={o.lang === lang ? 'true' : undefined}>
+          <span aria-hidden="true">{o.lang.toUpperCase()}</span>
+          <span class="sr-only">{t(o.lang).languageName}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+)}

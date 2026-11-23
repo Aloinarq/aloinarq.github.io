@@ -92,15 +92,19 @@ export const en = {
       fits: 'It fits.',
       tight: 'It fits, with only {gap} cm to spare next to the {near}.',
       hits: 'It doesn’t fit here: it runs into the {into}.',
+      hitsBoth: 'It doesn’t fit here: it runs into the {mirror} and the {door}.',
     },
     things: { mirror: { near: 'mirror', into: 'mirror' }, door: { near: 'door frame', into: 'door frame' } },
     detail:
       'Panel {w} × {h} cm on a {dresser} cm dresser. Gap to the mirror: {mirror} cm. Gap to the door frame: {door} cm.',
     overhang: 'The panel hangs over the dresser by {left} cm on the left and {right} cm on the right; the stand stays on top.',
     noOverhang: 'The panel sits within the dresser’s width.',
+    readout: { mirror: 'to the mirror', door: 'to the door frame', screen: 'screen', dresser: 'dresser', overhang: 'overhang, left / right' },
     fallback: 'Centred on the 112 cm dresser, the 55-inch Samsung QN85F (122.8 cm wide) hangs over by about 5 cm on each side and clears the vanity mirror by about a centimetre.',
     note: 'A simplified front view of the 3D model. When the gap is under 5 cm, check it with a tape before you buy.',
     compareHeading: 'The same question in the 3D model, from the bed',
+    compareSlider: 'Compare the two versions',
+    compareHint: 'Drag the line to compare the two versions.',
     compare: [
       { caption: 'On the dresser.', alt: 'From the bed: the TV standing on the dresser, the vanity and pink chair on the left, the door on the right.' },
       { caption: 'On the wall, saved as a second version.', alt: 'From the bed: the same TV mounted on the wall above the dresser.' },
@@ -109,7 +113,7 @@ export const en = {
   who: {
     word: 'For',
     heading: 'Who it’s for',
-    today: 'Today',
+    today: 'Without a scan',
     withScan: 'With a scan',
     groups: [
       {
@@ -145,7 +149,7 @@ export const en = {
     ],
   },
   how: {
-    heading: 'Four steps, one visit',
+    heading: 'One visit, four steps',
     steps: [
       { lead: 'First, you send an enquiry.', text: `Tell me which rooms, the city and what you want to decide. Within ${service.replyWorkingDays} working days I reply with a price and a possible date.` },
       { lead: 'Then, a written contract.', text: 'You get a written contract before any work starts; payment is by bank transfer under that contract. It lists the rooms, what you receive, the price and the delivery date.' },
@@ -186,6 +190,7 @@ export const en = {
     note: 'These are starting prices. The final price is in the contract, before any work starts.',
     photoAlt: 'The 3D model open on a phone, with the TV on the dresser.',
     photoCaption: 'The model on a phone, no app needed.',
+    estimate: { heading: 'What would scanning your apartment cost?', area: 'Floor area', result: 'from {price} lei' },
   },
   about: {
     heading: 'About',
@@ -197,7 +202,6 @@ export const en = {
       'The scan has limits, and I would rather you hear them from me. There is no PDF or CAD export yet, and the scan only sees what the walk-through sees: in my room a balcony behind closed curtains came out as a plain window. So before a scan I open whatever needs to be seen.',
       `I work in Romanian, Hungarian and English, anywhere in Romania, with visits by arrangement.`,
     ],
-    signoff: 'Levente',
     role: 'Room scans and 3D models',
   },
   faq: {

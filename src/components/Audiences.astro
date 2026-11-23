@@ -5,23 +5,31 @@ const { lang } = Astro.props;
 const d = t(lang);
 const ids = d.ids as Record<string, string>;
 ---
-<section class="section who" id={d.ids.who} aria-labelledby="who-heading">
-  <div class="who-col">
-    <h2 id="who-heading" class="sr-only">{d.who.heading}</h2>
-    <p class="giant rise" aria-hidden="true">{d.who.word}</p>
-    <ul class="bars">
-      {d.who.groups.map((g, i) => (
-        <li class="rise" style={`--i:${i + 1}`}>
-          <details class="bar" id={ids[g.key]} open={i === 0}>
-            <summary><span>{g.name}</span><span class="plus" aria-hidden="true"></span></summary>
-            <div class="body">
-              <div class="before"><p><strong>{d.who.today}:</strong> {g.today}</p></div>
-              <div class="after"><p><strong>{d.who.withScan}:</strong> {g.after}</p></div>
-              <a class="bar-cta" href={`#${d.ids.contact}`}>{d.nav.cta}</a>
-            </div>
-          </details>
-        </li>
+<!-- Who it's for: an index of the five audiences beside a panel comparing the work without a scan
+     and with one; switching audiences swaps the panel at once. Each panel keeps its audience's anchor (/ro/#bucatarii)
+     for the outreach emails; main.ts selects it from the link. Without script every panel shows. -->
+<section class="section who" id={d.ids.who} aria-labelledby="who-heading" data-who>
+  <h2 id="who-heading" class="sr-only">{d.who.heading}</h2>
+  <div class="who-grid">
+    <div class="who-index">
+      <p class="who-word rise" aria-hidden="true">{d.who.word}</p>
+      <div class="who-tabs rise" style="--i:1" role="tablist" aria-orientation="vertical" aria-label={d.who.heading} hidden>
+        {d.who.groups.map((g, i) => (
+          <button type="button" role="tab" id={`who-tab-${g.key}`} aria-controls={ids[g.key]} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>{g.name}</button>
+        ))}
+      </div>
+    </div>
+    <div class="who-panels rise" style="--i:2">
+      {d.who.groups.map((g) => (
+        <div class="who-panel" role="tabpanel" id={ids[g.key]} aria-labelledby={`who-tab-${g.key}`}>
+          <h3>{g.name}</h3>
+          <p class="who-label is-before">{d.who.today}</p>
+          <p class="who-before">{g.today}</p>
+          <p class="who-label is-after">{d.who.withScan}</p>
+          <p class="who-after">{g.after}</p>
+          <a class="button who-cta" href={`#${d.ids.contact}`}>{d.nav.cta}</a>
+        </div>
       ))}
-    </ul>
+    </div>
   </div>
 </section>

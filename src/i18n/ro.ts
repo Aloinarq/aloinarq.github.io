@@ -93,15 +93,19 @@ export const ro: Dict = {
       fits: 'Încape.',
       tight: 'Încape, dar rămân doar {gap} cm până la {near}.',
       hits: 'Aici nu încape: intră în {into}.',
+      hitsBoth: 'Aici nu încape: intră în {mirror} și în {door}.',
     },
     things: { mirror: { near: 'oglindă', into: 'oglindă' }, door: { near: 'tocul ușii', into: 'tocul ușii' } },
     detail:
       'Ecran de {w} × {h} cm pe o comodă de {dresser} cm. Până la oglindă: {mirror} cm. Până la tocul ușii: {door} cm.',
     overhang: 'Ecranul iese în afara comodei cu {left} cm în stânga și {right} cm în dreapta; piciorul rămâne pe comodă.',
     noOverhang: 'Ecranul se încadrează în lățimea comodei.',
+    readout: { mirror: 'până la oglindă', door: 'până la tocul ușii', screen: 'ecranul', dresser: 'comoda', overhang: 'iese în afară, stânga / dreapta' },
     fallback: 'Centrat pe comoda de 112 cm, Samsung QN85F de 55 de inchi (122,8 cm lățime) iese în afară cu circa 5 cm pe fiecare parte și trece pe lângă oglinda măsuței la aproximativ un centimetru.',
     note: 'O vedere simplificată din față a modelului 3D. Când distanța e sub 5 cm, verificați-o cu ruleta înainte să cumpărați.',
     compareHeading: 'Aceeași întrebare în modelul 3D, privind din pat',
+    compareSlider: 'Comparați cele două variante',
+    compareHint: 'Trageți linia ca să comparați cele două variante.',
     compare: [
       { caption: 'Pe comodă.', alt: 'Din pat: televizorul pe comodă, măsuța și scaunul roz în stânga, ușa în dreapta.' },
       { caption: 'Pe perete, salvat ca a doua variantă.', alt: 'Din pat: același televizor montat pe perete, deasupra comodei.' },
@@ -110,7 +114,7 @@ export const ro: Dict = {
   who: {
     word: 'Pentru',
     heading: 'Pentru cine',
-    today: 'Acum',
+    today: 'Fără scanare',
     withScan: 'Cu o scanare',
     groups: [
       {
@@ -146,7 +150,7 @@ export const ro: Dict = {
     ],
   },
   how: {
-    heading: 'Patru pași, o vizită',
+    heading: 'O vizită, patru pași',
     steps: [
       { lead: 'Mai întâi, îmi trimiteți o cerere.', text: `Spuneți-mi ce camere sunt, în ce localitate și ce vreți să decideți. În ${service.replyWorkingDays} zile lucrătoare vă răspund cu un preț și o dată posibilă.` },
       { lead: 'Apoi, un contract scris.', text: 'Primiți un contract scris înainte de orice lucrare; plata se face prin transfer bancar, pe baza acelui contract. În el apar camerele, ce primiți, prețul și termenul de livrare.' },
@@ -187,6 +191,7 @@ export const ro: Dict = {
     note: 'Sunt prețuri de pornire. Prețul final apare în contract, înainte de orice lucrare.',
     photoAlt: 'Modelul 3D deschis pe telefon, cu televizorul pe comodă.',
     photoCaption: 'Modelul pe telefon, fără aplicație.',
+    estimate: { heading: 'Cât ar costa scanarea apartamentului dvs.?', area: 'Suprafața apartamentului', result: 'de la {price} lei' },
   },
   about: {
     heading: 'Despre mine',
@@ -198,7 +203,6 @@ export const ro: Dict = {
       'Scanarea are limite și prefer să le aflați de la mine. Deocamdată nu există export PDF sau CAD, iar scanarea vede doar ce se vede când parcurg camera: la mine, un balcon din spatele draperiilor trase a ieșit ca o simplă fereastră. De aceea, înainte de scanare deschid tot ce trebuie să se vadă.',
       'Lucrez în română, maghiară și engleză, oriunde în România, cu vizite stabilite de comun acord.',
     ],
-    signoff: 'Levente',
     role: 'Scanări de camere și modele 3D',
   },
   faq: {

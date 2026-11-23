@@ -19,7 +19,7 @@ const doc = legal[lang][page];
 <Base lang={lang} page={page} title={`${doc.title} – ${site.nameInText}`} description={doc.description}>
   <header class="doc-hero" id="top">
     <nav class="doc-nav" aria-label={d.nav.label}>
-      <LangLinks lang={lang} page={page} />
+      <LangLinks lang={lang} page={page} variant="menu" />
       <a class="button" href={`${pathFor(lang, 'home')}#${d.ids.contact}`}>{d.nav.cta}</a>
     </nav>
     <a class="doc-mark" href={pathFor(lang, 'home')} translate="no" aria-label={`${site.nameInText}: ${d.legal.back}`}>{site.name}</a>

@@ -21,7 +21,7 @@ Live at https://aloinarq.github.io/ (GitHub Pages, deployed by `.github/workflow
 
 ### Optional, when you want them
 
-- **Portrait in the About letter:** save a square photo as `src/assets/portrait.jpg` (or `.png` / `.webp`). It appears automatically; without it the letter starts with the text.
+- **Portrait on the About business card:** save a square photo as `src/assets/portrait.jpg` (or `.png` / `.webp`). It appears on the card automatically; without it the card starts with the name.
 - **A form service instead of the email app:** by default the enquiry form opens the visitor's email app with the enquiry written out, addressed to the email in `src/config.ts`. To have the site send it instead, create an account with a form service, paste its endpoint URL into `formEndpoint`, and name the service in the "Who else sees it" section of `src/i18n/legal.ts`.
 - **Your own domain:** set it in `src/config.ts` (`url`) and `astro.config.mjs` (`site`), add a `public/CNAME` file with the domain, and point the domain's DNS at GitHub Pages.
 - **Where client models are hosted:** the privacy policy says the host is named in each contract; decide it before the first client.

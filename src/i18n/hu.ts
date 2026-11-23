@@ -93,15 +93,19 @@ export const hu: Dict = {
       fits: 'Elfér.',
       tight: 'Elfér, de csak {gap} cm marad {near}.',
       hits: 'Itt nem fér el: beleér {into}.',
+      hitsBoth: 'Itt nem fér el: beleér {mirror} és {door}.',
     },
     things: { mirror: { near: 'a tükörig', into: 'a tükörbe' }, door: { near: 'az ajtókeretig', into: 'az ajtókeretbe' } },
     detail:
       'Kijelző: {w} × {h} cm, a komód {dresser} cm. A tükörig: {mirror} cm. Az ajtókeretig: {door} cm.',
     overhang: 'A kijelző balra {left} cm-rel, jobbra {right} cm-rel lóg túl a komódon, a talp a komódon marad.',
     noOverhang: 'A kijelző belefér a komód szélességébe.',
+    readout: { mirror: 'a tükörig', door: 'az ajtókeretig', screen: 'a kijelző', dresser: 'a komód', overhang: 'túllógás balra / jobbra' },
     fallback: 'A 112 cm-es komód közepén az 55 colos Samsung QN85F (122,8 cm széles) mindkét oldalon körülbelül 5 cm-rel lóg túl, és nagyjából egy centiméterre fér el a fésülködőtükörtől.',
     note: 'A 3D modell egyszerűsített elölnézete. Ha a rés 5 cm alatti, vásárlás előtt mérje meg mérőszalaggal is.',
     compareHeading: 'Ugyanez a kérdés a 3D modellben, az ágyból nézve',
+    compareSlider: 'A két változat összehasonlítása',
+    compareHint: 'Húzza el a vonalat a két változat összehasonlításához.',
     compare: [
       { caption: 'A komódon.', alt: 'Az ágyból nézve: a tévé a komódon, balra a fésülködőasztal és a rózsaszín szék, jobbra az ajtó.' },
       { caption: 'A falon, második változatként elmentve.', alt: 'Az ágyból nézve: ugyanaz a tévé a falra szerelve, a komód fölött.' },
@@ -110,7 +114,7 @@ export const hu: Dict = {
   who: {
     word: 'Kinek',
     heading: 'Kinek szól',
-    today: 'Ma',
+    today: 'Szkennelés nélkül',
     withScan: 'Szkenneléssel',
     groups: [
       {
@@ -146,7 +150,7 @@ export const hu: Dict = {
     ],
   },
   how: {
-    heading: 'Négy lépés, egy látogatás',
+    heading: 'Egy látogatás, négy lépés',
     steps: [
       { lead: 'Először küldjön ajánlatkérést.', text: `Írja meg, mely szobákról van szó, melyik településen, és miről szeretne dönteni. ${service.replyWorkingDays} munkanapon belül válaszolok egy árral és egy lehetséges időponttal.` },
       { lead: 'Utána írásos szerződés.', text: 'Minden munka előtt írásos szerződést kap; a fizetés banki átutalással történik, e szerződés alapján. Benne vannak a szobák, amit kap, az ár és az átadás határideje.' },
@@ -187,6 +191,7 @@ export const hu: Dict = {
     note: 'Ezek kezdő árak. A végleges ár a szerződésben szerepel, minden munka előtt.',
     photoAlt: 'A 3D modell telefonon megnyitva, a tévével a komódon.',
     photoCaption: 'A modell telefonon, alkalmazás nélkül.',
+    estimate: { heading: 'Mennyibe kerülne az Ön lakásának szkennelése?', area: 'A lakás alapterülete', result: '{price} lejtől' },
   },
   about: {
     heading: 'Rólam',
@@ -198,7 +203,6 @@ export const hu: Dict = {
       'A szkennelésnek vannak korlátai, és jobb, ha tőlem hallja őket. PDF- vagy CAD-export egyelőre nincs, és a szkenner csak azt látja, amit a bejárás során lát: nálam egy behúzott függöny mögötti erkély egyszerű ablakként jelent meg. Ezért szkennelés előtt kinyitok mindent, aminek látszania kell.',
       'Románul, magyarul és angolul dolgozom, Románia egész területén, előre egyeztetett látogatással.',
     ],
-    signoff: 'Levente',
     role: 'Szobaszkennelés és 3D modellek',
   },
   faq: {

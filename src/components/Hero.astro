@@ -42,7 +42,7 @@ const fallback = await getImage({ src: heroShot, width: 900, format: 'jpg', qual
         <LangLinks lang={lang} page="home" />
       </div>
     </details>
-    <LangLinks lang={lang} page="home" />
+    <LangLinks lang={lang} page="home" variant="menu" />
     <ul class="links">{links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
     <a class="button" href={`#${id.contact}`}>{d.nav.cta}</a>
   </nav>

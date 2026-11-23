@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+// Development only: read as text and inlined below under `npm run dev`, never shipped in a build.
+import devPaletteCss from '../styles/dev-palette.css?raw';
 import { site } from '../config';
 import { alternates, t, type Lang, type Page } from '../i18n';
 
@@ -49,8 +51,11 @@ const ogImage = `${base}/og.jpg`;
     <meta property="og:image:alt" content={d.meta.ogAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <script is:inline>document.documentElement.classList.replace('no-js', 'js');</script>
+    {import.meta.env.DEV && <script is:inline set:html={"try{var p=localStorage.getItem('dev-palette');if(p)document.documentElement.dataset.palette=p}catch(e){}"} />}
+    {import.meta.env.DEV && <style is:inline set:html={devPaletteCss} />}
   </head>
   <body>
+    {import.meta.env.DEV && <button type="button" class="dev-palette" data-dev-palette>Palette: <span data-dev-palette-name></span></button>}
     <a class="skip" href="#main">{d.skip}</a>
     <slot />
     <script>

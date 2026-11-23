@@ -1,36 +1,67 @@
 ---
-import { Picture } from 'astro:assets';
-import phone from '../assets/shots/phone.jpg';
-import { t, type Lang } from '../i18n';
+import { prices } from '../config';
+import { fill, t, type Lang } from '../i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const d = t(lang);
+const locale = { ro: 'ro-RO', hu: 'hu-HU', en: 'en-GB' }[lang];
+// The groups come in this order in every language: scans, extras, offers for businesses.
+const [scans, extras, business] = d.prices.groups;
+const [firstRoom, ...businessRest] = business.items;
+// The apartment estimate starts at the example area used in the apartment price text.
+const e = d.prices.estimate;
+const area = prices.apartmentExampleArea;
+const estimate = Math.max(prices.apartmentMinimum, area * prices.apartmentPerSquareMetre);
 ---
+<!-- Prices as a board: each price large, the free first room for businesses as a ticket, and beside it an
+     estimate for a whole apartment that follows a floor-area slider (main.ts; without script it shows the
+     example area). The rule is the one in src/config.ts: a rate per m², with a minimum. -->
 <section class="section prices" id={d.ids.prices} aria-labelledby="prices-heading">
-  <div class="grid">
-    <div class="prices-head">
-      <h2 id="prices-heading" class="rise">{d.prices.heading}</h2>
-      <p class="intro rise" style="--i:1">{d.prices.intro}</p>
-      <figure class="rise" style="--i:2">
-        <Picture src={phone} formats={['avif', 'webp']} widths={[300, 450, 600]} sizes="(max-width: 899px) 60vw, 22vw" alt={d.prices.photoAlt} loading="lazy" />
-        <figcaption>{d.prices.photoCaption}</figcaption>
-      </figure>
-    </div>
-    <div class="menu-list">
-      {d.prices.groups.map((g, gi) => (
+  <div class="prices-top">
+    <h2 id="prices-heading" class="rise">{d.prices.heading}</h2>
+    <p class="intro rise" style="--i:1">{d.prices.intro}</p>
+  </div>
+  <div class="prices-grid">
+    <div class="board">
+      {[scans, extras].map((g, gi) => (
         <div class="group rise" style={`--i:${gi + 1}`}>
           <h3>{g.name}</h3>
           <ul class="items">
             {g.items.map((it) => (
               <li>
-                <div class="item-row"><span>{it.name}</span><span class="price">{it.price}</span></div>
+                <div class="item-row"><span class="item-name">{it.name}</span><span class="price">{it.price}</span></div>
                 <p>{it.text}</p>
               </li>
             ))}
           </ul>
         </div>
       ))}
+      <div class="group rise" style="--i:3">
+        <h3>{business.name}</h3>
+        <div class="ticket">
+          <p class="ticket-price">{firstRoom.price}</p>
+          <p class="ticket-name">{firstRoom.name}</p>
+          <p class="ticket-text">{firstRoom.text}</p>
+        </div>
+        <ul class="items">
+          {businessRest.map((it) => (
+            <li>
+              <div class="item-row"><span class="item-name">{it.name}</span><span class="price">{it.price}</span></div>
+              <p>{it.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p class="note">{d.prices.note}</p>
     </div>
-    <p class="note rise">{d.prices.note}</p>
+    <aside class="estimate rise" style="--i:2" data-estimate data-rate={prices.apartmentPerSquareMetre} data-min={prices.apartmentMinimum} data-locale={locale} data-result={e.result}>
+      <h3>{e.heading}</h3>
+      <div class="slider">
+        <label for="estimate-area">{e.area}</label>
+        <input id="estimate-area" type="range" min="20" max="200" step="5" value={area} />
+      </div>
+      <p class="estimate-area"><output for="estimate-area" data-area>{area}</output> m²</p>
+      <p class="estimate-result" aria-live="polite" data-out>{fill(e.result, { price: estimate.toLocaleString(locale) })}</p>
+    </aside>
   </div>
 </section>

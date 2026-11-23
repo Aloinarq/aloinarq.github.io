@@ -1,20 +1,52 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
+import dollhouse from '../assets/shots/dollhouse.jpg';
+import { site } from '../config';
 import { t, type Lang } from '../i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const d = t(lang);
-// A portrait appears when src/assets/portrait.(jpg|jpeg|png|webp) exists; otherwise the letter starts with the text.
+// A portrait appears on the card when src/assets/portrait.(jpg|jpeg|png|webp) exists.
 const found = Object.values(import.meta.glob<{ default: ImageMetadata }>('../assets/portrait.{jpg,jpeg,png,webp}', { eager: true }))[0];
+// The paragraphs, in this order in every language: who I am, every picture is my room, I work alone under
+// a contract, the scan's limits, languages and area.
+const [intro, myRoom, alone, limits, area] = d.about.paragraphs;
+const [hello, ...introRest] = intro.split(/(?<=\.)\s+/);
+const tel = site.phone.replace(/\s/g, '');
 ---
+<!-- About, sized to one screen: on the left the greeting at poster size and the rest of the letter, where
+     the scan's limits sit on a dark panel with an accent edge; on the right the model of Levente's own
+     bedroom (the paragraph saying so as its caption) with his business card at the bottom. -->
 <section class="section about" id={d.ids.about} aria-labelledby="about-heading">
-  <article class="letter">
-    <h2 id="about-heading" class="sr-only">{d.about.heading}</h2>
-    {found && <Image class="portrait rise" src={found.default} width={88} height={88} alt={d.about.photoAlt} />}
-    <div class="letter-body">
-      {d.about.paragraphs.map((p, i) => <p class="rise" style={`--i:${i + 1}`}>{p}</p>)}
+  <h2 id="about-heading" class="sr-only">{d.about.heading}</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="about-top">
+        <p class="hello rise">{hello}</p>
+        <p class="about-lead rise" style="--i:1">{introRest.join(' ')}</p>
+      </div>
+      <div class="letter-body">
+        <p class="rise" style="--i:2">{alone}</p>
+        <p class="limits rise" style="--i:3">{limits}</p>
+        <p class="rise" style="--i:4">{area}</p>
+      </div>
     </div>
-    <p class="signoff rise">{d.about.signoff}</p>
-    <p class="role">{d.about.role}</p>
-  </article>
+    <div class="about-side">
+      <figure class="about-room rise" style="--i:1">
+        <Picture src={dollhouse} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(max-width: 899px) 100vw, 40vw" alt={d.hero.posterAlt} loading="lazy" />
+        <figcaption>{myRoom}</figcaption>
+      </figure>
+      <div class="card rise" style="--i:2">
+        <span class="card-mark" aria-hidden="true" translate="no">{site.name}</span>
+        {found && <Image class="portrait" src={found.default} width={128} height={128} alt={d.about.photoAlt} />}
+        <p class="card-name">{site.ownerFullName[lang]}</p>
+        <p class="card-role">{d.about.role}</p>
+        <p class="card-lines">
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+          <a href={`tel:${tel}`}>{site.phone}</a>
+          <span>{site.city[lang]}</span>
+        </p>
+      </div>
+    </div>
+  </div>
 </section>

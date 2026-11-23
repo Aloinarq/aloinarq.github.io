@@ -56,7 +56,7 @@ export const hu: Dict = {
         tab: 'Modell',
         title: 'A szoba 3D-ben',
         text: `Minden szobát 3D modellként építek újra, amely böngészőben nyílik meg, telefonon vagy számítógépen, telepítés nélkül, a referenciafotókhoz igazított részletekkel: valódi anyagokkal, konyha- és szekrényfrontokkal, tükröző tükrökkel, és olyan ajtókkal, amelyek úgy nyílnak, mint a valóságban, zsanéron vagy tolva. Megnézheti babaházként, felülről, elölről vagy oldalról, vagy bejárhatja szemmagasságban.`,
-        alt: 'A 3D modell szemmagasságból: az ágy a bordázott fejtámlával, egy éjjeliszekrény és a gardrób.',
+        alt: 'A nappali konyhával szemmagasságból: elöl a konyhapult és a székek, hátul a sarokkanapé és az erkélyajtó.',
       },
       {
         tab: 'Alaprajz',
@@ -74,7 +74,7 @@ export const hu: Dict = {
         tab: 'Tervezés',
         title: 'Valós méretben',
         text: `Valós méretű bútorokat tehet bele egy katalógusból (kanapé, íróasztal, könyvespolc, szőnyegek, lámpák, tévék és más, vagy egyedi méret), vagy egy konkrét terméket a közölt méretei alapján. Mozgatás közben a bútor zölden mutatja, hol fér el, és pirosan, hol ütközne valamibe, és soha nem megy át falon vagy más bútoron. Kisebb tárgyakat bútorra is tehet, és azzal együtt mozognak. A szkennelt bútorok mozgathatók, forgathatók vagy törölhetők, az ajtók úgy nyílnak vagy csúsznak, mint a valóságban, és bejárás közben egy minitérkép mutatja, hol jár. Minden elrendezést elmenthet névvel ellátott változatként, visszavonással, és összehasonlíthatja őket.`,
-        alt: 'Egy 55 colos Samsung QN85F a komódon, kijelölve, a méreteivel és a falaktól mért távolságaival.',
+        alt: 'Egy katalógusból hozzáadott fotel, áttetszően és zölden, mert elfér a dohányzóasztal és a puff között.',
       },
     ],
     primary: 'Kérjen ajánlatot',
@@ -159,7 +159,7 @@ export const hu: Dict = {
     ],
     contractLabel: 'A szerződésminta első sorai, románul: ez az aláírt változat.',
     viewsLabel: 'Amit a szkennelés rögzít: a szoba felülről, elölről és oldalról.',
-    viewAlts: ['A hálószoba modellje felülről.', 'A hálószoba modellje elölről.', 'A hálószoba modellje oldalról.'],
+    viewAlts: ['Egy dolgozószoba felülről.', 'Ugyanaz a dolgozószoba oldalról, az íróasztal felé.', 'Ugyanaz a dolgozószoba a másik végéből.'],
     videoLabel: 'Egy 55 colos Samsung QN85F a katalógusból a komódra kerül, majd a falra.',
   },
   prices: {
@@ -196,6 +196,7 @@ export const hu: Dict = {
   about: {
     heading: 'Rólam',
     photoAlt: `${site.ownerFullName.hu} portréja`,
+    pictureAlt: 'Egy erkély 3D-ben újraépítve: sarokpad, kis kerek asztal, szőnyeg és futónövényes paraván.',
     paragraphs: [
       'Levente vagyok. Egy iPhone Pro LiDAR-érzékelőjével szobákat szkennelek, és mindegyiket méretes alaprajzzá és böngészőben megnyitható 3D modellé építem újra.',
       'Az oldalon minden kép a saját otthonomból való, amelyet szobáról szobára szkenneltem, és ugyanabban a nézegetőben építettem újra, amelyet Ön is kapna.',

@@ -56,7 +56,7 @@ export const ro: Dict = {
         tab: 'Model',
         title: 'Camera în 3D',
         text: `Fiecare cameră este reconstruită ca model 3D, care se deschide în browser, pe telefon sau pe calculator, fără nimic de instalat, cu detalii potrivite după fotografiile de referință: materiale reale, fronturi de bucătărie și dulapuri, oglinzi care reflectă și uși care se deschid ca în realitate, pe balamale sau glisante. O vedeți ca pe o casă de păpuși, de sus, din față sau din lateral, sau o parcurgeți la nivelul ochilor.`,
-        alt: 'Modelul 3D la înălțimea ochilor: patul cu tăblie capitonată, o noptieră și dulapul.',
+        alt: 'Camera de zi cu bucătărie la înălțimea ochilor: blatul și scaunele în față, canapeaua de colț și ușa balconului în spate.',
       },
       {
         tab: 'Plan',
@@ -74,7 +74,7 @@ export const ro: Dict = {
         tab: 'Amenajare',
         title: 'Încercați la mărime reală',
         text: `Adăugați mobilier din catalog la dimensiuni reale (canapea, birou, bibliotecă, covoare, lămpi, televizoare și altele, sau o dimensiune proprie), ori un produs anume, modelat după dimensiunile publicate. Cât timp mutați o piesă, ea arată verde unde încape și roșu unde s-ar lovi de ceva, și nu trece niciodată prin pereți sau prin alte piese. Lucrurile mai mici se pot așeza pe mobilier și se mută odată cu el. Mobilierul scanat se poate muta, roti sau scoate, ușile se deschid pe balamale sau glisează ca în realitate, iar o minihartă arată unde vă aflați când vă plimbați prin model. Salvați fiecare amenajare ca variantă cu nume, cu anulare, și le comparați.`,
-        alt: 'Un Samsung QN85F de 55 de inchi pus pe comodă, selectat, cu dimensiunile și distanțele până la pereți.',
+        alt: 'Un fotoliu adăugat din catalog, transparent și verde pentru că încape între măsuța de cafea și puf.',
       },
     ],
     primary: 'Cereți o ofertă',
@@ -159,7 +159,7 @@ export const ro: Dict = {
     ],
     contractLabel: 'Primele rânduri ale modelului de contract, versiunea care se semnează.',
     viewsLabel: 'Ce surprinde scanarea: camera văzută de sus, din față și din lateral.',
-    viewAlts: ['Modelul dormitorului văzut de sus.', 'Modelul dormitorului văzut din față.', 'Modelul dormitorului văzut din lateral.'],
+    viewAlts: ['Un studio văzut de sus.', 'Același studio din lateral, spre birou.', 'Același studio din celălalt capăt.'],
     videoLabel: 'Un Samsung QN85F de 55 de inchi luat din catalog și pus pe comodă, apoi montat pe perete.',
   },
   prices: {
@@ -196,6 +196,7 @@ export const ro: Dict = {
   about: {
     heading: 'Despre mine',
     photoAlt: `Portretul lui ${site.ownerFullName.ro}`,
+    pictureAlt: 'Un balcon reconstruit în 3D: o banchetă de colț, o măsuță rotundă, un covor și un paravan cu plante agățătoare.',
     paragraphs: [
       'Sunt Levente. Scanez camere cu senzorul LiDAR al unui iPhone Pro și reconstruiesc fiecare cameră ca plan măsurat și model 3D, pe care îl deschideți în browser.',
       'Toate imaginile de pe această pagină sunt din locuința mea, scanată cameră cu cameră și reconstruită în același vizualizator pe care l-ați primi și dumneavoastră.',

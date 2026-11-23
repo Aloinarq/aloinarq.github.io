@@ -55,7 +55,7 @@ export const en = {
         tab: 'Model',
         title: 'The room in 3D',
         text: `Each room is rebuilt as a 3D model that opens in a web browser, on a phone or a computer, with nothing to install, in detail matched to reference photos: real materials, kitchen and cabinet fronts, mirrors that reflect, and doors that open the way they really do, hinged or sliding. See it as a dollhouse, from the top, front or side, or walk through it at eye height.`,
-        alt: 'The 3D model at eye height: the bed with its channelled headboard, a nightstand and the wardrobe.',
+        alt: 'The living room with kitchen at eye height: the kitchen counter and chairs in front, the corner sofa and the balcony door behind.',
       },
       {
         tab: 'Plan',
@@ -73,7 +73,7 @@ export const en = {
         tab: 'Planning',
         title: 'Try it at real size',
         text: `Add furniture from a catalogue at real dimensions (sofa, desk, bookshelf, rugs, lamps, TVs and more, or a custom size), or a specific product modelled from its published dimensions. While you move a piece it shows green where it fits and red where it would hit something, and it never passes through walls or other furniture. Set smaller things on top of furniture and they move with it. Scanned furniture can be moved, rotated or removed, doors swing or slide as they really do, and a minimap shows where you are as you walk. Save each arrangement as a named version, with undo, and compare.`,
-        alt: 'A Samsung 55-inch QN85F placed on the dresser, selected, with its size and its distances to the walls.',
+        alt: 'An armchair added from the catalogue, shown see-through and green because it fits between the coffee table and the pouf.',
       },
     ],
     primary: 'Send an enquiry',
@@ -158,7 +158,7 @@ export const en = {
     ],
     contractLabel: 'The first lines of the contract template (in Romanian, the version that is signed).',
     viewsLabel: 'What the scan captures, seen from the top, the front and the side.',
-    viewAlts: ['The bedroom model from the top.', 'The bedroom model from the front.', 'The bedroom model from the side.'],
+    viewAlts: ['A studio from the top.', 'The same studio from the side, facing the desk.', 'The same studio from the other end.'],
     videoLabel: 'Placing a Samsung 55-inch QN85F from the catalogue onto the dresser, then mounting it on the wall.',
   },
   prices: {
@@ -195,6 +195,7 @@ export const en = {
   about: {
     heading: 'About',
     photoAlt: `Portrait of ${site.ownerFullName.en}`,
+    pictureAlt: 'A balcony rebuilt in 3D: a corner bench, a small round table, a rug and a screen of climbing plants.',
     paragraphs: [
       'I’m Levente. I scan rooms with the LiDAR sensor of an iPhone Pro and rebuild each one as a measured floor plan and a 3D model you can open in a browser.',
       'Every picture on this page comes from my own home, scanned room by room and rebuilt in the same viewer you would get.',

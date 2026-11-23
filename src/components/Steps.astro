@@ -60,7 +60,7 @@ const subject = fill(c.subject, { property: exampleProperty, city: exampleCity }
             <p><strong>{d.how.steps[2].lead}</strong> {d.how.steps[2].text}</p>
             <figure class="evidence">
               <div class="views">
-                {views.map((v, i) => <Image src={v} width={360} densities={[1, 2]} alt={d.how.viewAlts[i]} loading="lazy" />)}
+                {views.map((v, i) => <Image src={v} width={360} densities={[1, 2]} alt={d.how.viewAlts[i]} loading="lazy" style={`--ratio:${(v.width / v.height).toFixed(4)}`} />)}
               </div>
               <figcaption>{d.how.viewsLabel}</figcaption>
             </figure>

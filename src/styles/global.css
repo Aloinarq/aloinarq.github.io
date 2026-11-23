@@ -452,7 +452,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .how.is-pinned .stages > li > p strong { display: block; margin-bottom: 18px; font-size: clamp(2rem, 1.2rem + 2.4vw, 3.75rem); line-height: 1.05; letter-spacing: -0.025em; }
 .how.is-pinned .evidence { margin-top: 0; }
 .how.is-pinned .paper { padding: 32px 36px 36px; font-size: var(--step-body); }
-.how.is-pinned .views img { height: clamp(140px, 24vh, 260px); }
+/* The three views share the column: each takes width in proportion to its shape, so they stay
+   the same height and never run past the column (they did at mid widths, scrolling the page sideways). */
+.how.is-pinned .views img { flex: var(--ratio, 1) 1 0; min-width: 0; width: 0; height: auto; max-height: clamp(140px, 24vh, 260px); object-fit: contain; }
 .how.is-pinned .stage-video video { width: auto; max-width: 100%; max-height: 56svh; }
 @media (max-width: 899px) {
   .how-col { margin-left: 0; }

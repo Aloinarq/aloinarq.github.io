@@ -44,7 +44,7 @@ export const en = {
   },
   hero: {
     lead: 'Rooms scanned with LiDAR and delivered as a measured plan and a 3D model, for designers, makers, builders and agents.',
-    videoLabel: 'The 3D model of my bedroom, scanned on 29 October, turning slowly.',
+    videoLabel: '3D models of rooms in my own home, one after another, turning slowly: a bedroom, a living room with kitchen, a studio and a balcony.',
     posterAlt: 'The 3D model of a bedroom seen from above as a dollhouse: bed, wardrobe, dresser and nightstands.',
   },
   what: {
@@ -197,7 +197,7 @@ export const en = {
     photoAlt: `Portrait of ${site.ownerFullName.en}`,
     paragraphs: [
       'I’m Levente. I scan rooms with the LiDAR sensor of an iPhone Pro and rebuild each one as a measured floor plan and a 3D model you can open in a browser.',
-      'Every picture on this page is my own bedroom, scanned on 29 October and rebuilt in the same viewer you would get.',
+      'Every picture on this page comes from my own home, scanned room by room and rebuilt in the same viewer you would get.',
       'I work alone, under my own name, not as a company. Before any work we sign a written contract, and you pay by bank transfer under it.',
       `The scan has limits, and I would rather you hear them from me. There is no PDF or CAD export yet, and the scan only sees what the walk-through sees: in my room a balcony behind closed curtains came out as a plain window. So before a scan I open whatever needs to be seen, and I fill any gaps from photos taken from the neighbouring rooms.`,
       `I work in Romanian, Hungarian and English, anywhere in Romania, with visits by arrangement.`,

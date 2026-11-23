@@ -45,7 +45,7 @@ export const ro: Dict = {
   },
   hero: {
     lead: 'Camere scanate cu LiDAR și livrate ca plan măsurat și model 3D, pentru designeri, tâmplari, constructori și agenți imobiliari.',
-    videoLabel: 'Modelul 3D al dormitorului meu, scanat pe 29 octombrie, rotindu-se încet.',
+    videoLabel: 'Modele 3D ale unor camere din locuința mea, una după alta, rotindu-se încet: un dormitor, o cameră de zi cu bucătărie, un studio și un balcon.',
     posterAlt: 'Modelul 3D al unui dormitor văzut de sus, ca o casă de păpuși: patul, dulapul, comoda și noptierele.',
   },
   what: {
@@ -198,7 +198,7 @@ export const ro: Dict = {
     photoAlt: `Portretul lui ${site.ownerFullName.ro}`,
     paragraphs: [
       'Sunt Levente. Scanez camere cu senzorul LiDAR al unui iPhone Pro și reconstruiesc fiecare cameră ca plan măsurat și model 3D, pe care îl deschideți în browser.',
-      'Toate imaginile de pe această pagină arată dormitorul meu, scanat pe 29 octombrie și reconstruit în același vizualizator pe care l-ați primi și dumneavoastră.',
+      'Toate imaginile de pe această pagină sunt din locuința mea, scanată cameră cu cameră și reconstruită în același vizualizator pe care l-ați primi și dumneavoastră.',
       'Lucrez singur, în nume propriu, nu ca firmă. Înainte de orice lucrare semnăm un contract scris, iar plata se face prin transfer bancar, pe baza lui.',
       `Scanarea are limite și prefer să le aflați de la mine. Deocamdată nu există export PDF sau CAD, iar scanarea vede doar ce se vede când parcurg camera: la mine, un balcon din spatele draperiilor trase a ieșit ca o simplă fereastră. De aceea, înainte de scanare deschid tot ce trebuie să se vadă, iar golurile le completez din fotografii făcute din camerele vecine.`,
       'Lucrez în română, maghiară și engleză, oriunde în România, cu vizite stabilite de comun acord.',

@@ -45,7 +45,7 @@ export const hu: Dict = {
   },
   hero: {
     lead: 'LiDAR-ral felmért szobák méretes alaprajzként és 3D modellként, belsőépítészeknek, bútorkészítőknek, kivitelezőknek és ingatlanosoknak.',
-    videoLabel: 'A hálószobám 3D modellje, október 29-én szkennelve, lassan forogva.',
+    videoLabel: 'Saját otthonom szobáinak 3D modelljei egymás után, lassan forogva: egy hálószoba, egy nappali konyhával, egy dolgozószoba és egy erkély.',
     posterAlt: 'Egy hálószoba 3D modellje felülről, babaházként: ágy, gardrób, komód és éjjeliszekrények.',
   },
   what: {
@@ -198,7 +198,7 @@ export const hu: Dict = {
     photoAlt: `${site.ownerFullName.hu} portréja`,
     paragraphs: [
       'Levente vagyok. Egy iPhone Pro LiDAR-érzékelőjével szobákat szkennelek, és mindegyiket méretes alaprajzzá és böngészőben megnyitható 3D modellé építem újra.',
-      'Az oldalon minden kép a saját hálószobám, amelyet október 29-én szkenneltem, és ugyanabban a nézegetőben építettem újra, amelyet Ön is kapna.',
+      'Az oldalon minden kép a saját otthonomból való, amelyet szobáról szobára szkenneltem, és ugyanabban a nézegetőben építettem újra, amelyet Ön is kapna.',
       'Egyedül dolgozom, a saját nevemen, nem cégként. Minden munka előtt írásos szerződést kötünk, és e szerződés alapján banki átutalással fizet.',
       `A szkennelésnek vannak korlátai, és jobb, ha tőlem hallja őket. PDF- vagy CAD-export egyelőre nincs, és a szkenner csak azt látja, amit a bejárás során lát: nálam egy behúzott függöny mögötti erkély egyszerű ablakként jelent meg. Ezért szkennelés előtt kinyitok mindent, aminek látszania kell, a hiányokat pedig a szomszédos szobákból készült fotók alapján pótolom.`,
       'Románul, magyarul és angolul dolgozom, Románia egész területén, előre egyeztetett látogatással.',

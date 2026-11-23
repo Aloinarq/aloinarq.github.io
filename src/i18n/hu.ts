@@ -55,7 +55,7 @@ export const hu: Dict = {
       {
         tab: 'Modell',
         title: 'A szoba 3D-ben',
-        text: 'Minden szobát 3D modellként építek újra, amely böngészőben nyílik meg, telefonon vagy számítógépen, telepítés nélkül. Nézheti babaházként, felülről, elölről vagy oldalról, vagy szemmagasságban végigsétálhat benne.',
+        text: `Minden szobát 3D modellként építek újra, amely böngészőben nyílik meg, telefonon vagy számítógépen, telepítés nélkül, a referenciafotókhoz igazított részletekkel: valódi anyagokkal, konyha- és szekrényfrontokkal, tükröző tükrökkel, és olyan ajtókkal, amelyek úgy nyílnak, mint a valóságban, zsanéron vagy tolva. Megnézheti babaházként, felülről, elölről vagy oldalról, vagy bejárhatja szemmagasságban.`,
         alt: 'A 3D modell szemmagasságból: az ágy a bordázott fejtámlával, egy éjjeliszekrény és a gardrób.',
       },
       {
@@ -67,13 +67,13 @@ export const hu: Dict = {
       {
         tab: 'Mérés',
         title: 'Mérőszalag a modellben',
-        text: 'Kattintson két pontra, és leolvashatja a távolságot, akár egy irányra rögzítve is. Ha kijelöl egy bútort, látja, mekkora hely marad a falakig és a körülötte álló bútorokig.',
+        text: `Kattintson két pontra, és leolvashatja a távolságot, akár egy irányra rögzítve. Ha kijelöl egy bútort, látja a méretét és a távolságát a falaktól és a körülötte lévő bútoroktól. Minden szkennelt bútornak van valós méret mezője: az oda beírt, mérőszalaggal mért méret felülírja a szkennelt méretet.`,
         alt: 'A mérőszalag a modellben: 83,8 cm az ágy vége és a komód között.',
       },
       {
         tab: 'Tervezés',
         title: 'Valós méretben',
-        text: 'Valós méretű bútorokat tehet bele egy katalógusból (kanapé, íróasztal, könyvespolc, szőnyeg, lámpa, tévé és még sok más, vagy tetszőleges méret), illetve konkrét termékeket a gyártó által közölt méretek alapján. A darabok a padlón vagy a falon állnak, és megállnak a falnál. A szkennelt bútorok mozgathatók, forgathatók vagy eltávolíthatók, az ajtók nyithatók és csukhatók. Minden elrendezést külön néven menthet, visszavonással, és összehasonlíthatja őket.',
+        text: `Valós méretű bútorokat tehet bele egy katalógusból (kanapé, íróasztal, könyvespolc, szőnyegek, lámpák, tévék és más, vagy egyedi méret), vagy egy konkrét terméket a közölt méretei alapján. Mozgatás közben a bútor zölden mutatja, hol fér el, és pirosan, hol ütközne valamibe, és soha nem megy át falon vagy más bútoron. Kisebb tárgyakat bútorra is tehet, és azzal együtt mozognak. A szkennelt bútorok mozgathatók, forgathatók vagy törölhetők, az ajtók úgy nyílnak vagy csúsznak, mint a valóságban, és bejárás közben egy minitérkép mutatja, hol jár. Minden elrendezést elmenthet névvel ellátott változatként, visszavonással, és összehasonlíthatja őket.`,
         alt: 'Egy 55 colos Samsung QN85F a komódon, kijelölve, a méreteivel és a falaktól mért távolságaival.',
       },
     ],
@@ -91,7 +91,7 @@ export const hu: Dict = {
     labels: { vanity: 'fésülködőasztal', mirror: 'tükör', dresser: 'komód', door: 'ajtó' },
     status: {
       fits: 'Elfér.',
-      tight: 'Elfér, de csak {gap} cm marad {near}.',
+      tight: `Ellenőrizze mérőszalaggal: csak {gap} cm marad {near}.`,
       hits: 'Itt nem fér el: beleér {into}.',
       hitsBoth: 'Itt nem fér el: beleér {mirror} és {door}.',
     },
@@ -127,13 +127,13 @@ export const hu: Dict = {
         key: 'makers',
         name: 'Konyha-, gardrób- és bútorkészítőknek',
         today: 'Még egy kiszállás egy méret ellenőrzésére, és egy ügyfél, aki nem tudja elképzelni, hogyan fog állni a bútor a szobában.',
-        after: 'A szoba méreteiből és modelljéből tervez, megmutatja az ügyfélnek a bútort a helyén, a kritikus méreteket pedig gyártás előtt a helyszínen ellenőrzi.',
+        after: `A szoba modellje és alaprajza alapján tervez, a látogatáskor mérőszalaggal mért és a modellbe beírt kritikus méretekkel, megmutatja az ügyfélnek a bútort a helyén, és gyártás előtt a helyszínen még ellenőriz.`,
       },
       {
         key: 'contractors',
         name: 'Felújító kivitelezőknek',
         today: 'Árajánlat fotókból és egy gyors bejárásból, aztán a falak valódi hossza csak munka közben derül ki.',
-        after: 'Felmért állapot a munka előtt: falak, nyílások és alapterület az árajánlathoz, és a szoba eredeti állapota.',
+        after: `A tér felmért állapota a munka előtt: falak, nyílások és alapterület az árajánlathoz, a fontos méretek mérőszalaggal ellenőrizve, és a szoba, ahogy volt.`,
       },
       {
         key: 'agents',
@@ -154,7 +154,7 @@ export const hu: Dict = {
     steps: [
       { lead: 'Először küldjön ajánlatkérést.', text: `Írja meg, mely szobákról van szó, melyik településen, és miről szeretne dönteni. ${service.replyWorkingDays} munkanapon belül válaszolok egy árral és egy lehetséges időponttal.` },
       { lead: 'Utána írásos szerződés.', text: 'Minden munka előtt írásos szerződést kap; a fizetés banki átutalással történik, e szerződés alapján. Benne vannak a szobák, amit kap, az ár és az átadás határideje.' },
-      { lead: 'A megbeszélt napon: a szkennelés.', text: `Minden szobát végigjárok egy iPhone Próval. A LiDAR-érzékelő és az Apple RoomPlan rögzíti a falakat, ajtókat, ablakokat és a fő bútorokat, közben referenciafotókat is készítek. Szobánként nagyjából ${service.minutesPerRoomOnSite} perccel számoljon.` },
+      { lead: 'A megbeszélt napon: a szkennelés.', text: `Minden szobát bejárok egy iPhone Pro-val. A LiDAR-érzékelő és az Apple RoomPlan rögzíti a falakat, ajtókat, ablakokat és a fő bútorokat, referenciafotókat készítek, és mérőszalaggal lemérem a fontos méreteket, ezért az ajánlatkérésben írja meg, melyek ezek. Szobánként nagyjából ${service.minutesPerRoomOnSite} percre számítson.` },
       { lead: `${service.deliveryWorkingDays} munkanapon belül: átadás és közös tervezés.`, text: 'Privát linket kap a modellhez és az alaprajzhoz. Együtt nyitjuk meg, elhelyezzük benne, amit fontolgat, és minden elrendezést külön néven elmentünk.' },
     ],
     contractLabel: 'A szerződésminta első sorai, románul: ez az aláírt változat.',
@@ -200,7 +200,7 @@ export const hu: Dict = {
       'Levente vagyok. Egy iPhone Pro LiDAR-érzékelőjével szobákat szkennelek, és mindegyiket méretes alaprajzzá és böngészőben megnyitható 3D modellé építem újra.',
       'Az oldalon minden kép a saját hálószobám, amelyet október 29-én szkenneltem, és ugyanabban a nézegetőben építettem újra, amelyet Ön is kapna.',
       'Egyedül dolgozom, a saját nevemen, nem cégként. Minden munka előtt írásos szerződést kötünk, és e szerződés alapján banki átutalással fizet.',
-      'A szkennelésnek vannak korlátai, és jobb, ha tőlem hallja őket. PDF- vagy CAD-export egyelőre nincs, és a szkenner csak azt látja, amit a bejárás során lát: nálam egy behúzott függöny mögötti erkély egyszerű ablakként jelent meg. Ezért szkennelés előtt kinyitok mindent, aminek látszania kell.',
+      `A szkennelésnek vannak korlátai, és jobb, ha tőlem hallja őket. PDF- vagy CAD-export egyelőre nincs, és a szkenner csak azt látja, amit a bejárás során lát: nálam egy behúzott függöny mögötti erkély egyszerű ablakként jelent meg. Ezért szkennelés előtt kinyitok mindent, aminek látszania kell, a hiányokat pedig a szomszédos szobákból készült fotók alapján pótolom.`,
       'Románul, magyarul és angolul dolgozom, Románia egész területén, előre egyeztetett látogatással.',
     ],
     role: 'Szobaszkennelés és 3D modellek',
@@ -210,7 +210,7 @@ export const hu: Dict = {
     items: [
       {
         q: 'Mennyire pontos?',
-        a: 'A szobát az iPhone LiDAR-érzékelője és az Apple RoomPlan méri fel, ami bútorok és elrendezések tervezéséhez megfelelő. Pontossági számot nem adok meg. Ami milliméterre készül, például munkalap vagy beépített bútor, annak a kritikus méreteit a helyszínen ellenőrizze, ahogy egyébként is tenné.',
+        a: `A szkennelés önmagában nagyjából ±5 cm-es pontosságú a falaknál, nyílásoknál és bútoroknál, ami elrendezések tervezéséhez és annak ellenőrzéséhez megfelelő, hogy mi fér el. A látogatáskor mérőszalaggal lemérem a fontos méreteket, és beírom őket a modellbe; ezek felülírják a szkennelt értékeket. Ami milliméterre készül, például munkalap vagy beépített bútor, azt továbbra is a helyszínen ellenőrzi, aki elkészíti.`,
       },
       {
         q: 'Mennyi ideig tart egy szkennelés?',
@@ -218,7 +218,7 @@ export const hu: Dict = {
       },
       {
         q: 'Mit kell tennem?',
-        a: 'Engedjen be, és nyissa ki, aminek látszania kell: függönyöket, ajtókat, szekrényeket, ha a belsejük számít. A bútorokat nem kell elmozdítani; a modell részévé válnak, és ott áthelyezhetők vagy eltávolíthatók.',
+        a: `Engedjen be, és nyissa ki, aminek látszania kell: függönyöket, ajtókat, szekrényeket, ha a belsejük is számít. Írja meg, mely méretek fontosak Önnek, például egy fal a konyhához vagy egy fülke a gardróbhoz, és a látogatáskor mérőszalaggal lemérem őket. A bútorokat nem kell elmozdítania; a modell részévé válnak, és ott áthelyezhetők vagy törölhetők.`,
       },
       {
         q: 'Mit kapok, és hogyan nyitom meg?',
@@ -238,7 +238,7 @@ export const hu: Dict = {
       },
       {
         q: 'Mi nincs benne?',
-        a: 'Kültéri terek és egész épületek, fotorealisztikus látványtervek, CAD-, DWG- vagy PDF-rajzok, letölthető alkalmazás és belsőépítészeti tervezés. Az alaprajz és a modell a szobákat a mostani állapotukban mutatja, hogy tervezhessen bennük.',
+        a: `Kertek és egész épületek, fotorealisztikus látványtervek, CAD-, DWG- vagy PDF-rajzok, letölthető alkalmazás és belsőépítészeti tervezés. A lakáshoz tartozó erkélyek benne vannak. Az alaprajz és a modell a szobákat úgy mutatja, ahogy vannak, hogy Ön tervezhessen bennük.`,
       },
     ],
     privacyLink: 'adatvédelmi tájékoztató',

@@ -54,7 +54,7 @@ export const en = {
       {
         tab: 'Model',
         title: 'The room in 3D',
-        text: 'Each room is rebuilt as a 3D model that opens in a web browser, on a phone or a computer, with nothing to install. See it as a dollhouse, from the top, front or side, or walk through it at eye height.',
+        text: `Each room is rebuilt as a 3D model that opens in a web browser, on a phone or a computer, with nothing to install, in detail matched to reference photos: real materials, kitchen and cabinet fronts, mirrors that reflect, and doors that open the way they really do, hinged or sliding. See it as a dollhouse, from the top, front or side, or walk through it at eye height.`,
         alt: 'The 3D model at eye height: the bed with its channelled headboard, a nightstand and the wardrobe.',
       },
       {
@@ -66,13 +66,13 @@ export const en = {
       {
         tab: 'Measure',
         title: 'A tape in the model',
-        text: 'Click two points and read the distance, or lock it to one direction. Select a piece and you see its clearance to the walls and the furniture around it.',
+        text: `Click two points and read the distance, or lock it to one direction. Select a piece and you see its size and its clearance to the walls and the furniture around it. Every scanned piece has a real-size field: a tape-measured size typed there replaces the scan’s.`,
         alt: 'The tape measure in the model: 83.8 cm between the foot of the bed and the dresser.',
       },
       {
         tab: 'Planning',
         title: 'Try it at real size',
-        text: 'Add furniture from a catalogue at real dimensions (sofa, desk, bookshelf, rugs, lamps, TVs and more, or a custom size), or a specific product modelled from its published dimensions. Pieces sit on the floor or a wall and stop at the walls. Scanned furniture can be moved, rotated or removed, and doors open and close. Save each arrangement as a named version, with undo, and compare.',
+        text: `Add furniture from a catalogue at real dimensions (sofa, desk, bookshelf, rugs, lamps, TVs and more, or a custom size), or a specific product modelled from its published dimensions. While you move a piece it shows green where it fits and red where it would hit something, and it never passes through walls or other furniture. Set smaller things on top of furniture and they move with it. Scanned furniture can be moved, rotated or removed, doors swing or slide as they really do, and a minimap shows where you are as you walk. Save each arrangement as a named version, with undo, and compare.`,
         alt: 'A Samsung 55-inch QN85F placed on the dresser, selected, with its size and its distances to the walls.',
       },
     ],
@@ -90,7 +90,7 @@ export const en = {
     labels: { vanity: 'vanity', mirror: 'mirror', dresser: 'dresser', door: 'door' },
     status: {
       fits: 'It fits.',
-      tight: 'It fits, with only {gap} cm to spare next to the {near}.',
+      tight: `Check this with a tape: only {gap} cm to the {near}.`,
       hits: 'It doesn’t fit here: it runs into the {into}.',
       hitsBoth: 'It doesn’t fit here: it runs into the {mirror} and the {door}.',
     },
@@ -126,13 +126,13 @@ export const en = {
         key: 'makers',
         name: 'Kitchen, wardrobe and furniture makers',
         today: 'A second trip to check a measurement, and a client who can’t picture how the piece will sit in the room.',
-        after: 'You design from the room’s measurements and model, show the client the piece in place, and check the critical dimensions on site before production.',
+        after: `You design from the room’s model and plan, with the critical dimensions tape-measured on the visit and entered into it, show the client the piece in place, and still check on site before production.`,
       },
       {
         key: 'contractors',
         name: 'Renovation contractors',
         today: 'Quotes from photos and a quick walk-through, then the real wall lengths turn up once work has started.',
-        after: 'A measured record of the space before work starts: walls, openings and floor area for the quote, and the room as it was.',
+        after: `A measured record of the space before work starts: walls, openings and floor area for the quote, the key dimensions checked with a tape, and the room as it was.`,
       },
       {
         key: 'agents',
@@ -153,7 +153,7 @@ export const en = {
     steps: [
       { lead: 'First, you send an enquiry.', text: `Tell me which rooms, the city and what you want to decide. Within ${service.replyWorkingDays} working days I reply with a price and a possible date.` },
       { lead: 'Then, a written contract.', text: 'You get a written contract before any work starts; payment is by bank transfer under that contract. It lists the rooms, what you receive, the price and the delivery date.' },
-      { lead: 'On the day, the scan visit.', text: `I walk each room with an iPhone Pro. Its LiDAR sensor and Apple’s RoomPlan capture the walls, doors, windows and main furniture, and I take reference photos. Allow about ${service.minutesPerRoomOnSite} minutes per room.` },
+      { lead: 'On the day, the scan visit.', text: `I walk each room with an iPhone Pro. Its LiDAR sensor and Apple’s RoomPlan capture the walls, doors, windows and main furniture, I take reference photos, and I tape-measure the dimensions that matter, so tell me which ones in your enquiry. Allow about ${service.minutesPerRoomOnSite} minutes per room.` },
       { lead: `Within ${service.deliveryWorkingDays} working days, delivery and planning together.`, text: 'You get a private link to the model and the floor plan. We open it together, place what you are considering, and save each arrangement as a named version.' },
     ],
     contractLabel: 'The first lines of the contract template (in Romanian, the version that is signed).',
@@ -199,7 +199,7 @@ export const en = {
       'I’m Levente. I scan rooms with the LiDAR sensor of an iPhone Pro and rebuild each one as a measured floor plan and a 3D model you can open in a browser.',
       'Every picture on this page is my own bedroom, scanned on 29 October and rebuilt in the same viewer you would get.',
       'I work alone, under my own name, not as a company. Before any work we sign a written contract, and you pay by bank transfer under it.',
-      'The scan has limits, and I would rather you hear them from me. There is no PDF or CAD export yet, and the scan only sees what the walk-through sees: in my room a balcony behind closed curtains came out as a plain window. So before a scan I open whatever needs to be seen.',
+      `The scan has limits, and I would rather you hear them from me. There is no PDF or CAD export yet, and the scan only sees what the walk-through sees: in my room a balcony behind closed curtains came out as a plain window. So before a scan I open whatever needs to be seen, and I fill any gaps from photos taken from the neighbouring rooms.`,
       `I work in Romanian, Hungarian and English, anywhere in Romania, with visits by arrangement.`,
     ],
     role: 'Room scans and 3D models',
@@ -209,7 +209,7 @@ export const en = {
     items: [
       {
         q: 'How accurate is it?',
-        a: 'The room is measured with the iPhone’s LiDAR sensor and Apple’s RoomPlan, which is right for planning furniture and layouts. I don’t quote an accuracy figure. For anything made to the millimetre, such as a worktop or built-in units, check the critical dimensions on site as you would anyway.',
+        a: `The scan alone is good to about ±5 cm for walls, openings and furniture, which is right for planning layouts and checking what fits. On the visit I tape-measure the dimensions that matter and enter them into the model, and those measurements replace the scan’s. Anything made to the millimetre, such as a worktop or built-in units, is still checked on site by whoever makes it.`,
       },
       {
         q: 'How long does a scan take?',
@@ -217,7 +217,7 @@ export const en = {
       },
       {
         q: 'What do I need to do?',
-        a: 'Let me in and open what should be seen: curtains, doors, wardrobes if their inside matters. You don’t need to move furniture; it becomes part of the model, and it can be moved or removed there.',
+        a: `Let me in and open what should be seen: curtains, doors, wardrobes if their inside matters. Tell me which dimensions matter to you, such as a wall for a kitchen or a niche for a wardrobe, and I tape-measure them on the visit. You don’t need to move furniture; it becomes part of the model, and it can be moved or removed there.`,
       },
       {
         q: 'What do I receive, and how do I open it?',
@@ -237,7 +237,7 @@ export const en = {
       },
       {
         q: 'What is not included?',
-        a: 'Outdoor spaces and whole buildings, photoreal renders, CAD, DWG or PDF drawings, a downloadable app, and interior design. The plan and the model show the rooms as they are, for you to plan in.',
+        a: `Gardens and whole buildings, photoreal renders, CAD, DWG or PDF drawings, a downloadable app, and interior design. Balconies that belong to the flat are included. The plan and the model show the rooms as they are, for you to plan in.`,
       },
     ],
     privacyLink: 'privacy policy',

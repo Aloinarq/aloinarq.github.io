@@ -55,7 +55,7 @@ export const ro: Dict = {
       {
         tab: 'Model',
         title: 'Camera în 3D',
-        text: 'Fiecare cameră este reconstruită ca model 3D, care se deschide în browser, pe telefon sau pe calculator, fără nimic de instalat. O vedeți ca pe o casă de păpuși, de sus, din față sau din lateral, ori vă plimbați prin ea la înălțimea ochilor.',
+        text: `Fiecare cameră este reconstruită ca model 3D, care se deschide în browser, pe telefon sau pe calculator, fără nimic de instalat, cu detalii potrivite după fotografiile de referință: materiale reale, fronturi de bucătărie și dulapuri, oglinzi care reflectă și uși care se deschid ca în realitate, pe balamale sau glisante. O vedeți ca pe o casă de păpuși, de sus, din față sau din lateral, sau o parcurgeți la nivelul ochilor.`,
         alt: 'Modelul 3D la înălțimea ochilor: patul cu tăblie capitonată, o noptieră și dulapul.',
       },
       {
@@ -67,13 +67,13 @@ export const ro: Dict = {
       {
         tab: 'Măsurare',
         title: 'Ruleta din model',
-        text: 'Dați clic pe două puncte și citiți distanța, sau blocați măsurarea pe o singură direcție. Selectați o piesă și vedeți cât spațiu rămâne până la pereți și la mobilierul din jur.',
+        text: `Dați clic pe două puncte și citiți distanța, sau blocați măsurarea pe o direcție. Selectați o piesă și vedeți dimensiunea ei și distanța până la pereți și la mobilierul din jur. Fiecare piesă scanată are un câmp pentru dimensiunea reală: o dimensiune măsurată cu ruleta și scrisă acolo o înlocuiește pe cea din scanare.`,
         alt: 'Ruleta din model: 83,8 cm între capătul patului și comodă.',
       },
       {
         tab: 'Amenajare',
         title: 'Încercați la mărime reală',
-        text: 'Adăugați mobilier din catalog la dimensiuni reale (canapea, birou, bibliotecă, covoare, lămpi, televizoare și altele, sau o dimensiune la alegere) ori un produs anume, modelat după dimensiunile publicate de producător. Piesele stau pe podea sau pe perete și se opresc în pereți. Mobilierul scanat poate fi mutat, rotit sau scos, iar ușile se deschid și se închid. Fiecare variantă se salvează cu nume, cu anulare, ca să le puteți compara.',
+        text: `Adăugați mobilier din catalog la dimensiuni reale (canapea, birou, bibliotecă, covoare, lămpi, televizoare și altele, sau o dimensiune proprie), ori un produs anume, modelat după dimensiunile publicate. Cât timp mutați o piesă, ea arată verde unde încape și roșu unde s-ar lovi de ceva, și nu trece niciodată prin pereți sau prin alte piese. Lucrurile mai mici se pot așeza pe mobilier și se mută odată cu el. Mobilierul scanat se poate muta, roti sau scoate, ușile se deschid pe balamale sau glisează ca în realitate, iar o minihartă arată unde vă aflați când vă plimbați prin model. Salvați fiecare amenajare ca variantă cu nume, cu anulare, și le comparați.`,
         alt: 'Un Samsung QN85F de 55 de inchi pus pe comodă, selectat, cu dimensiunile și distanțele până la pereți.',
       },
     ],
@@ -91,7 +91,7 @@ export const ro: Dict = {
     labels: { vanity: 'măsuță', mirror: 'oglindă', dresser: 'comodă', door: 'ușă' },
     status: {
       fits: 'Încape.',
-      tight: 'Încape, dar rămân doar {gap} cm până la {near}.',
+      tight: `Verificați cu ruleta: rămân doar {gap} cm până la {near}.`,
       hits: 'Aici nu încape: intră în {into}.',
       hitsBoth: 'Aici nu încape: intră în {mirror} și în {door}.',
     },
@@ -127,13 +127,13 @@ export const ro: Dict = {
         key: 'makers',
         name: 'Producători de bucătării, dulapuri și mobilă',
         today: 'Încă un drum ca să verificați o cotă, și un client care nu-și poate imagina cum va sta piesa în cameră.',
-        after: 'Proiectați pornind de la dimensiunile și modelul camerei, îi arătați clientului piesa la locul ei și verificați cotele critice la fața locului înainte de producție.',
+        after: `Proiectați după modelul și planul camerei, cu dimensiunile critice măsurate cu ruleta la vizită și introduse în model, îi arătați clientului piesa la locul ei și verificați totuși pe loc înainte de producție.`,
       },
       {
         key: 'contractors',
         name: 'Firme de renovări',
         today: 'Oferte făcute din poze și dintr-o tură rapidă, apoi lungimile reale ale pereților ies la iveală după ce a început lucrarea.',
-        after: 'O evidență măsurată a spațiului înainte de lucrări: pereți, goluri și suprafață pentru ofertă, plus camera așa cum era.',
+        after: `O evidență măsurată a spațiului înainte de lucrări: pereți, goluri și suprafață pentru ofertă, dimensiunile importante verificate cu ruleta și camera așa cum era.`,
       },
       {
         key: 'agents',
@@ -154,7 +154,7 @@ export const ro: Dict = {
     steps: [
       { lead: 'Mai întâi, îmi trimiteți o cerere.', text: `Spuneți-mi ce camere sunt, în ce localitate și ce vreți să decideți. În ${service.replyWorkingDays} zile lucrătoare vă răspund cu un preț și o dată posibilă.` },
       { lead: 'Apoi, un contract scris.', text: 'Primiți un contract scris înainte de orice lucrare; plata se face prin transfer bancar, pe baza acelui contract. În el apar camerele, ce primiți, prețul și termenul de livrare.' },
-      { lead: 'În ziua stabilită, vizita de scanare.', text: `Trec prin fiecare cameră cu un iPhone Pro. Senzorul LiDAR și RoomPlan de la Apple surprind pereții, ușile, ferestrele și mobilierul principal, iar eu fac și fotografii de referință. Socotiți cam ${service.minutesPerRoomOnSite} minute pe cameră.` },
+      { lead: 'În ziua stabilită, vizita de scanare.', text: `Parcurg fiecare cameră cu un iPhone Pro. Senzorul LiDAR și RoomPlan de la Apple surprind pereții, ușile, ferestrele și mobilierul principal, fac fotografii de referință și măsor cu ruleta dimensiunile care contează, așa că spuneți-mi în cerere care sunt acestea. Socotiți cam ${service.minutesPerRoomOnSite} minute pe cameră.` },
       { lead: `În ${service.deliveryWorkingDays} zile lucrătoare, livrarea și planificarea împreună.`, text: 'Primiți un link privat către model și plan. Îl deschidem împreună, punem în el ce luați în calcul și salvăm fiecare variantă cu nume.' },
     ],
     contractLabel: 'Primele rânduri ale modelului de contract, versiunea care se semnează.',
@@ -200,7 +200,7 @@ export const ro: Dict = {
       'Sunt Levente. Scanez camere cu senzorul LiDAR al unui iPhone Pro și reconstruiesc fiecare cameră ca plan măsurat și model 3D, pe care îl deschideți în browser.',
       'Toate imaginile de pe această pagină arată dormitorul meu, scanat pe 29 octombrie și reconstruit în același vizualizator pe care l-ați primi și dumneavoastră.',
       'Lucrez singur, în nume propriu, nu ca firmă. Înainte de orice lucrare semnăm un contract scris, iar plata se face prin transfer bancar, pe baza lui.',
-      'Scanarea are limite și prefer să le aflați de la mine. Deocamdată nu există export PDF sau CAD, iar scanarea vede doar ce se vede când parcurg camera: la mine, un balcon din spatele draperiilor trase a ieșit ca o simplă fereastră. De aceea, înainte de scanare deschid tot ce trebuie să se vadă.',
+      `Scanarea are limite și prefer să le aflați de la mine. Deocamdată nu există export PDF sau CAD, iar scanarea vede doar ce se vede când parcurg camera: la mine, un balcon din spatele draperiilor trase a ieșit ca o simplă fereastră. De aceea, înainte de scanare deschid tot ce trebuie să se vadă, iar golurile le completez din fotografii făcute din camerele vecine.`,
       'Lucrez în română, maghiară și engleză, oriunde în România, cu vizite stabilite de comun acord.',
     ],
     role: 'Scanări de camere și modele 3D',
@@ -210,7 +210,7 @@ export const ro: Dict = {
     items: [
       {
         q: 'Cât de precis este?',
-        a: 'Camera e măsurată cu senzorul LiDAR al iPhone-ului și cu RoomPlan de la Apple, ceea ce se potrivește pentru planificarea mobilierului și a amenajării. Nu dau o cifră de precizie. Pentru ce se face la milimetru, cum ar fi un blat sau un corp încastrat, verificați cotele critice la fața locului, cum ați face oricum.',
+        a: `Scanarea singură are o precizie de aproximativ ±5 cm pentru pereți, goluri și mobilier, suficient pentru planificarea amenajării și pentru a verifica ce încape. La vizită măsor cu ruleta dimensiunile care contează și le introduc în model, iar acestea înlocuiesc valorile din scanare. Ce se face la milimetru, cum ar fi un blat sau mobilierul încorporat, se verifică în continuare pe loc de cel care îl execută.`,
       },
       {
         q: 'Cât durează o scanare?',
@@ -218,7 +218,7 @@ export const ro: Dict = {
       },
       {
         q: 'Ce trebuie să fac eu?',
-        a: 'Să-mi deschideți și să deschideți ce trebuie să se vadă: draperii, uși, dulapuri, dacă interiorul lor contează. Nu trebuie să mutați mobila; devine parte din model, iar acolo poate fi mutată sau scoasă.',
+        a: `Să-mi deschideți și să deschideți ce trebuie să se vadă: draperii, uși, dulapuri dacă interiorul lor contează. Spuneți-mi ce dimensiuni contează pentru dumneavoastră, de exemplu un perete pentru bucătărie sau o nișă pentru dulap, și le măsor cu ruleta la vizită. Nu trebuie să mutați mobila; devine parte din model și acolo poate fi mutată sau scoasă.`,
       },
       {
         q: 'Ce primesc și cum îl deschid?',
@@ -238,7 +238,7 @@ export const ro: Dict = {
       },
       {
         q: 'Ce nu este inclus?',
-        a: 'Spații exterioare și clădiri întregi, randări fotorealiste, desene CAD, DWG sau PDF, o aplicație de descărcat și designul interior. Planul și modelul arată camerele așa cum sunt, ca să puteți planifica în ele.',
+        a: `Grădini și clădiri întregi, randări fotorealiste, desene CAD, DWG sau PDF, o aplicație de descărcat și design interior. Balcoanele care țin de locuință sunt incluse. Planul și modelul arată camerele așa cum sunt, ca să planificați în ele.`,
       },
     ],
     privacyLink: 'politica de confidențialitate',

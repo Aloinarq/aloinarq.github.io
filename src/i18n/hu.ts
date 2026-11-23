@@ -62,13 +62,13 @@ export const hu: Dict = {
         tab: 'Alaprajz',
         title: 'Alaprajz m²-rel',
         text: 'Felülnézeti alaprajz falakkal, ajtókkal, ablakokkal és számozott bútorokkal, a teljes mérettel és az alapterülettel m²-ben, valamint jelmagyarázattal, benne minden darab méretével. Képernyőn jelenik meg; PDF- vagy CAD-export egyelőre nincs.',
-        alt: 'A hálószoba alaprajza: 4,11 × 3,60 m, körülbelül 14,8 m², számozott bútorokkal és mérettáblázattal.',
+        alt: 'Az egész lakás alaprajza: összesen 7,30 × 14,97 m, körülbelül 92,8 m², minden szoba a saját alapterületével, számozott bútorokkal és mérettáblázattal.',
       },
       {
         tab: 'Mérés',
         title: 'Mérőszalag a modellben',
         text: `Kattintson két pontra, és leolvashatja a távolságot, akár egy irányra rögzítve. Ha kijelöl egy bútort, látja a méretét és a távolságát a falaktól és a körülötte lévő bútoroktól. Minden szkennelt bútornak van valós méret mezője: az oda beírt, mérőszalaggal mért méret felülírja a szkennelt méretet.`,
-        alt: 'A mérőszalag a modellben: 83,8 cm az ágy vége és a komód között.',
+        alt: 'A mérőszalag a modellben: 3,409 m a dolgozószoba padlóján, az íróasztal és a kanapé között.',
       },
       {
         tab: 'Tervezés',
@@ -160,7 +160,7 @@ export const hu: Dict = {
     contractLabel: 'A szerződésminta első sorai, románul: ez az aláírt változat.',
     viewsLabel: 'Amit a szkennelés rögzít: a szoba felülről, elölről és oldalról.',
     viewAlts: ['Egy dolgozószoba felülről.', 'Ugyanaz a dolgozószoba oldalról, az íróasztal felé.', 'Ugyanaz a dolgozószoba a másik végéből.'],
-    videoLabel: 'Egy 55 colos Samsung QN85F a katalógusból a komódra kerül, majd a falra.',
+    videoLabel: 'Egy katalógusból választott fotel áthúzva a nappalin: piros, ahol a konyhapultba vagy egy másik fotelbe ütközne, zöld, ahol elfér.',
   },
   prices: {
     heading: 'Bevezető árak',
@@ -189,7 +189,7 @@ export const hu: Dict = {
       },
     ],
     note: 'Ezek kezdő árak. A végleges ár a szerződésben szerepel, minden munka előtt.',
-    photoAlt: 'A 3D modell telefonon megnyitva, a tévével a komódon.',
+    photoAlt: 'A 3D modell telefonon megnyitva: egy nappali konyhával.',
     photoCaption: 'A modell telefonon, alkalmazás nélkül.',
     estimate: { heading: 'Mennyibe kerülne az Ön lakásának szkennelése?', area: 'A lakás alapterülete', result: '{price} lejtől' },
   },

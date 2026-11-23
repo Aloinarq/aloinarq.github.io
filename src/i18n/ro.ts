@@ -62,13 +62,13 @@ export const ro: Dict = {
         tab: 'Plan',
         title: 'Plan cu m²',
         text: 'Un plan văzut de sus, cu pereți, uși, ferestre și mobilier numerotat, dimensiunile totale și suprafața în m², plus o legendă cu dimensiunile fiecărei piese. Planul se vede pe ecran; deocamdată nu există export PDF sau CAD.',
-        alt: 'Planul dormitorului: 4,11 × 3,60 m, aproximativ 14,8 m², cu mobilierul numerotat și o legendă cu dimensiuni.',
+        alt: 'Planul întregii locuințe: 7,30 × 14,97 m în total, aproximativ 92,8 m², fiecare cameră cu suprafața ei, mobilierul numerotat și o legendă cu dimensiuni.',
       },
       {
         tab: 'Măsurare',
         title: 'Ruleta din model',
         text: `Dați clic pe două puncte și citiți distanța, sau blocați măsurarea pe o direcție. Selectați o piesă și vedeți dimensiunea ei și distanța până la pereți și la mobilierul din jur. Fiecare piesă scanată are un câmp pentru dimensiunea reală: o dimensiune măsurată cu ruleta și scrisă acolo o înlocuiește pe cea din scanare.`,
-        alt: 'Ruleta din model: 83,8 cm între capătul patului și comodă.',
+        alt: 'Ruleta din model: 3,409 m pe podeaua studioului, între birou și canapea.',
       },
       {
         tab: 'Amenajare',
@@ -160,7 +160,7 @@ export const ro: Dict = {
     contractLabel: 'Primele rânduri ale modelului de contract, versiunea care se semnează.',
     viewsLabel: 'Ce surprinde scanarea: camera văzută de sus, din față și din lateral.',
     viewAlts: ['Un studio văzut de sus.', 'Același studio din lateral, spre birou.', 'Același studio din celălalt capăt.'],
-    videoLabel: 'Un Samsung QN85F de 55 de inchi luat din catalog și pus pe comodă, apoi montat pe perete.',
+    videoLabel: 'Un fotoliu din catalog mutat printr-o cameră de zi: roșu unde s-ar lovi de blatul bucătăriei sau de alt fotoliu, verde unde încape.',
   },
   prices: {
     heading: 'Prețuri de lansare',
@@ -189,7 +189,7 @@ export const ro: Dict = {
       },
     ],
     note: 'Sunt prețuri de pornire. Prețul final apare în contract, înainte de orice lucrare.',
-    photoAlt: 'Modelul 3D deschis pe telefon, cu televizorul pe comodă.',
+    photoAlt: 'Modelul 3D deschis pe telefon: o cameră de zi cu bucătărie.',
     photoCaption: 'Modelul pe telefon, fără aplicație.',
     estimate: { heading: 'Cât ar costa scanarea apartamentului dvs.?', area: 'Suprafața apartamentului', result: 'de la {price} lei' },
   },

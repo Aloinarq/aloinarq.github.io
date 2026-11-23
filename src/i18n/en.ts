@@ -61,13 +61,13 @@ export const en = {
         tab: 'Plan',
         title: 'A plan with m²',
         text: 'A top-down plan with walls, doors, windows and numbered furniture, the overall size and the floor area in m², and a legend with each piece’s dimensions. It is shown on screen; there is no PDF or CAD export yet.',
-        alt: 'The floor plan of the bedroom: 4.11 × 3.60 m, about 14.8 m², with numbered furniture and a legend of sizes.',
+        alt: 'The floor plan of the whole flat: 7.30 × 14.97 m overall, about 92.8 m², each room with its area, numbered furniture and a legend of sizes.',
       },
       {
         tab: 'Measure',
         title: 'A tape in the model',
         text: `Click two points and read the distance, or lock it to one direction. Select a piece and you see its size and its clearance to the walls and the furniture around it. Every scanned piece has a real-size field: a tape-measured size typed there replaces the scan’s.`,
-        alt: 'The tape measure in the model: 83.8 cm between the foot of the bed and the dresser.',
+        alt: 'The tape measure in the model: 3.409 m along the studio floor, between the desk and the sofa.',
       },
       {
         tab: 'Planning',
@@ -159,7 +159,7 @@ export const en = {
     contractLabel: 'The first lines of the contract template (in Romanian, the version that is signed).',
     viewsLabel: 'What the scan captures, seen from the top, the front and the side.',
     viewAlts: ['A studio from the top.', 'The same studio from the side, facing the desk.', 'The same studio from the other end.'],
-    videoLabel: 'Placing a Samsung 55-inch QN85F from the catalogue onto the dresser, then mounting it on the wall.',
+    videoLabel: 'An armchair from the catalogue dragged across a living room: red where it would hit the kitchen counter or another chair, green where it fits.',
   },
   prices: {
     heading: 'Introductory prices',
@@ -188,7 +188,7 @@ export const en = {
       },
     ],
     note: 'These are starting prices. The final price is in the contract, before any work starts.',
-    photoAlt: 'The 3D model open on a phone, with the TV on the dresser.',
+    photoAlt: 'The 3D model open on a phone: a living room with kitchen.',
     photoCaption: 'The model on a phone, no app needed.',
     estimate: { heading: 'What would scanning your apartment cost?', area: 'Floor area', result: 'from {price} lei' },
   },

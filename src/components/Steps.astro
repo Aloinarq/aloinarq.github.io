@@ -3,7 +3,7 @@ import { Image, getImage } from 'astro:assets';
 import top from '../assets/shots/view-top.jpg';
 import front from '../assets/shots/view-front.jpg';
 import side from '../assets/shots/view-side.jpg';
-import tvPoster from '../assets/shots/tv-place-poster.jpg';
+import tvPoster from '../assets/shots/place-poster.jpg';
 import { site } from '../config';
 import { fill, t, type Lang } from '../i18n';
 interface Props { lang: Lang }
@@ -68,7 +68,7 @@ const subject = fill(c.subject, { property: exampleProperty, city: exampleCity }
           <li class="rise" data-step="3">
             <p><strong>{d.how.steps[3].lead}</strong> {d.how.steps[3].text}</p>
             <figure class="evidence stage-video">
-              <video data-lazy-video data-src="/media/tv-place.mp4" poster={poster.src} muted loop playsinline preload="none" width="1440" height="844" aria-label={d.how.videoLabel}></video>
+              <video data-lazy-video data-src="/media/place.mp4" poster={poster.src} muted loop playsinline preload="none" width="1440" height="844" aria-label={d.how.videoLabel}></video>
               <figcaption>{d.how.videoLabel}</figcaption>
             </figure>
           </li>
